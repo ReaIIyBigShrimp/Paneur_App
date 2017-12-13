@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- including ECharts file -->
+    <script src="js/echarts.dev.js"></script>
+</head>
+
+<body>
+    <!-- prepare a DOM container with width and height -->
+    <div id="chart" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // based on prepared DOM, initialize echarts instance
+        // Setid to chart'
+        var myChart = echarts.init(document.getElementById('chart'));
+        // console.log('Generating a simple bar chart...');
+        // specify chart configuration item and data
+        // Initial setting
+        var option = {
+            textStyle: {
+                color: '#123456'
+            },
+            title: {
+                text: 'Demographics'
+            },
+            roseType: true,
+            tooltip: {},
+            legend: {
+                data: ['Scores']
+            },
+            series: [{
+                name: 'Scores',
+                type: 'pie',
+                radius: '55%',
+                value: 40,
+                data: [{
+                        value: 13,
+                        name: '<16'
+                    },
+                    {
+                        value: 16,
+                        name: '18-24'
+                    },
+                    {
+                        value: 22,
+                        name: '25-29'
+                    },
+                    {
+                        value: 24,
+                        name: '30-39'
+                    },
+                    {
+                        value: 26,
+                        name: '40-49'
+                    },
+                    {
+                        value: 20,
+                        name: '50-59'
+                    },
+                    {
+                        value: 15,
+                        name: '60-69'
+                    }
+                ],
+                itemStyle: {
+                    normal: {
+                        color: '#123456'
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        smooth: false,
+                        /* lineStyle: {
+                            type: solid
+                        } */
+                    }
+                }
+            }]
+        };
+        // Change
+        var newOption = {
+            //backgroundColor: '#2c343c',
+            title: {
+                text: 'Marketing Results'
+            },
+            tooltip: {},
+            // A warning will occur if data is not the same as title.
+            legend: {
+                data: ['Values']
+            },
+            labelLine: {
+                normal: {
+                    lineStyle: {
+                        color: '#d3d3d3'
+                    }
+                }
+            },
+            series: [{
+                name: 'Values',
+                type: 'pie',
+                radius: '55%',
+                roseType: true,
+                data: [{
+                        value: 400,
+                        name: 'Searching Engine'
+                    },
+                    {
+                        value: 335,
+                        name: 'Direct'
+                    },
+                    {
+                        value: 310,
+                        name: 'Email Newsletters'
+                    },
+                    {
+                        value: 274,
+                        name: 'Online Advertisement'
+                    },
+                    {
+                        value: 235,
+                        name: 'Video Advertisement'
+                    }
+                ],
+                // Custom. Apply this to a map.
+                markPoint: {
+                    symbol: 'pin',
+                    symbolSize: 50,
+                    data: {
+                        name: 'Pin',
+                        x: 100,
+                        y: 100,
+                        symbol: 'pin',
+                        symbolSize: 50,
+                        symbolOffset: [0, 0],
+                        itemStyle: {
+                            color: 'rgb(128,128,128)',
+                            borderColor: '#000'
+                        }
+                    }
+                },
+            }]
+        };
+        // use configuration item and data specified to show chart
+        myChart.setOption(option);
+        console.log('Setting toggle variable...');
+        // Variable to toggle
+        var optionIsUsed = true;
+        // Switches between charts 'Demographics' + 'Marketing Results'.
+        // This function is run on clicking the button.
+        var toggle = function () {
+            console.log("Changing chart's content...");
+            if (optionIsUsed) {
+                myChart.setOption(newOption);
+                optionIsUsed = false;
+                console.log("First option is used: " + optionIsUsed);
+            } else {
+                console.log(optionIsUsed);
+                myChart.setOption(option);
+                // Reset setOption value (toggle)
+                optionIsUsed = true;
+                console.log("First option is used: " + optionIsUsed);
+            }
+        };
+    </script>
+    <!-- Find the declaration of this function -->
+    <button onclick="toggle()">Reload</button>
+    <!-- <a href="javascript:;" onclick="reload()">Run</a> -->
+</body>
+
+</html>

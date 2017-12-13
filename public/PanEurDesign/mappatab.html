@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+
+		<!-- Viewport for Responsivity -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	
+		<!-- Stylesheets -->
+		<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="map/css/style.css">
+		<link rel="stylesheet" type="text/css" href="map/mapplic/mapplic.css">
+		<link rel="stylesheet" type="text/css" href="map/css/map.css">
+		<!-- Internet Explorer -->
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" href="mapplic/mapplic-ie.css">
+			<script type="text/javascript" src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<base target="_blank">
+
+	<body>
+		<div id="wrap">
+
+			
+			<div id="header"></div>
+
+			<!-- Site content -->
+			<div id="content">
+
+				<section id="map-section" class="inner over">
+					
+
+					<!-- Map -->
+					<div class="map-container">
+						
+						<div id="mapplic"></div>
+					</div>
+
+				</section>
+
+	
+
+			</div>
+
+			<!-- Site footer -->
+			
+		</div>
+
+		<!-- Scripts -->
+		<script type="text/javascript" src="map/js/jquery.min.js"></script>
+		<script type="text/javascript" src="map/js/hammer.min.js"></script>
+		<script type="text/javascript" src="map/js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="map/js/script.js"></script>
+		<script type="text/javascript" src="map/mapplic/mapplic.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#mapplic').mapplic({
+					source: 'europe.json',
+					mapfill: true,
+					height: 650,
+					clearbutton: false,
+					zoombuttons: false,
+					sidebar: false,
+					minimap: false,
+					fullscreen: false,
+					maxscale: 4,
+					zoom: true,
+					deeplinking: true,
+					action: 'tooltip',
+					developer: false
+				});
+			});
+		</script>
+	</body>
+</html>

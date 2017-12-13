@@ -1,0 +1,21 @@
+<h1>Listing items</h1>
+ <%= link_to 'List of Items', controller: 'items' %>
+ <%= link_to 'Add to Database', new_item_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.title %></td>
+      <td><%= item.text %></td>
+      <td><%= link_to 'Show', item_path(item) %></td>
+      <td><%= link_to 'Edit', edit_item_path(item)%></td>
+      <td><%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Confirm deletion?'} %></td>
+    </tr>
+  <% end %>
+</table>
