@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id]) 
   end
   def create
+    # Create the net object Item.
     @item = Item.new(item_params)
     
     if @item.save
