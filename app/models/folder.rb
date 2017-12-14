@@ -1,3 +1,2 @@
 class Folder < ApplicationRecord
-    
 end

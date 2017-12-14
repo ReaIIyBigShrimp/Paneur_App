@@ -1,4 +1,5 @@
-class Item < ApplicationRecord
-    validates :title, presence: true,
-    length: { minimum: 5 }
+class Item < ActiveRecord::Base
+
+
+
 end
