@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,7 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# paneur-rails
-Ruby on Rails application, with a map interface.
->>>>>>> c39981986ab4ded31b829de1142b5bd5f93a92c1

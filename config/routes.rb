@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  # get 'items/show'
 
+  get 'paneur/map'
+
+  get 'paneur/overview'
+
+  get 'paneur/archival_sources'
+
+  get 'paneur/country'
+
+  # get 'items/show'
   # get 'items/view_all'
-  get 'countries'
   # get 'items/new'
 
   # get 'items/destroy'
