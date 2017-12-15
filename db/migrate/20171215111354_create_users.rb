@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer "group"
       t.text "email"
       t.integer "status"
-
       t.timestamps
     end
   end

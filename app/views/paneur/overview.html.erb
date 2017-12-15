@@ -1,2 +1,11 @@
 <h1>Paneur#overview</h1>
 <p>Find me in app/views/paneur/overview.html.erb</p>
+
+<% @folders.each do |folder| %>
+    <tr>
+      <td><%= folder.folder_id %></td>
+    </tr>
+    <tr>
+        <td><%= folder.title %></td>
+    </tr>
+<% end %>

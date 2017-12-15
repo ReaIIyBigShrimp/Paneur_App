@@ -4,7 +4,9 @@ class CreateUploads < ActiveRecord::Migration[5.1]
       t.integer "upload_id"
       t.integer "uploaddate"
       t.integer "User"
-      t.text "type"
+      # Changed from 'type'. Was causing an error
+      # when running 'rake db:seed:dump'.
+      t.text "file_type"
       t.integer "folder"
       t.integer "location"
       t.text "title"

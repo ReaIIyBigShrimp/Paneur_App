@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171215111354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,22 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "cal_id"
     t.text "location"
     t.text "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.text "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "f_groups", id: false, force: :cascade do |t|
     t.integer "id"
     t.text "title"
     t.text "permissions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "folders", id: false, force: :cascade do |t|
@@ -37,12 +47,23 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "master_folder"
     t.text "ha_groups"
     t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "groups", id: false, force: :cascade do |t|
     t.integer "id"
     t.text "name"
     t.text "permissions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "log", id: false, force: :cascade do |t|
@@ -52,16 +73,20 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "date"
     t.integer "action"
     t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "uploads", id: false, force: :cascade do |t|
     t.integer "upload_id"
     t.integer "uploaddate"
     t.integer "User"
-    t.text "type"
+    t.text "file_type"
     t.integer "folder"
     t.integer "location"
     t.text "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", id: false, force: :cascade do |t|
@@ -73,12 +98,16 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "group"
     t.text "email"
     t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users_sessions", id: false, force: :cascade do |t|
     t.integer "id"
     t.integer "user_id"
     t.text "hash"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

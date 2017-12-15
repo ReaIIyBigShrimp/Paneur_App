@@ -4,7 +4,7 @@ class PaneurController < ApplicationController
   end
 
   def overview
-    
+    @folders = Folder.all
   end
 
   def archival_sources
