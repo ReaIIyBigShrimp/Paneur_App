@@ -10,69 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171214153507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "calendar", id: false, force: :cascade do |t|
-    t.text "c1"
-    t.text "c2"
-    t.integer "c3"
-    t.integer "c4"
-    t.integer "c5"
-    t.integer "c6"
-    t.text "c7"
-    t.text "c8"
+  create_table "countries", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "f_groups", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.text "c2"
-    t.text "c3"
+    t.integer "id"
+    t.text "title"
+    t.text "permissions"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "folders", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.integer "c2"
-    t.text "c3"
-    t.text "c4"
-  end
-
-  create_table "groups", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.text "c2"
-    t.text "c3"
-  end
-
-  create_table "log", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.integer "c2"
-    t.integer "c3"
-    t.text "c4"
-    t.integer "c5"
-    t.text "c6"
-  end
-
-  create_table "uploads", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.integer "c2"
-    t.integer "c3"
-    t.text "c4"
-    t.integer "c5"
-    t.integer "c6"
-    t.text "c7"
-  end
-
-  create_table "users", id: false, force: :cascade do |t|
-    t.text "c1"
-    t.text "c2"
-  end
-
-  create_table "users_sessions", id: false, force: :cascade do |t|
-    t.integer "c1"
-    t.integer "c2"
-    t.text "c3"
+  create_table "items", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

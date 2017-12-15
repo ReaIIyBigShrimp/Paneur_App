@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # Gem for generating models
 # Create the models. 
 gem 'rmre'
+
+gem 'seed_dump'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
