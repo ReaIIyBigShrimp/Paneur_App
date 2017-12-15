@@ -10,29 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214153507) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "countries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "calendar", id: false, force: :cascade do |t|
+    t.text "event"
+    t.text "description"
+    t.integer "starttime"
+    t.integer "user_id"
+    t.integer "event_id"
+    t.integer "cal_id"
+    t.text "location"
+    t.text "file"
   end
 
   create_table "f_groups", id: false, force: :cascade do |t|
     t.integer "id"
     t.text "title"
     t.text "permissions"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "folders", id: false, force: :cascade do |t|
+    t.integer "folder_id"
+    t.integer "master_folder"
+    t.text "ha_groups"
+    t.text "title"
+  end
+
+  create_table "groups", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.text "name"
+    t.text "permissions"
+  end
+
+  create_table "log", id: false, force: :cascade do |t|
+    t.integer "userid"
+    t.integer "fileid"
+    t.integer "folderid"
+    t.text "date"
+    t.integer "action"
+    t.text "title"
+  end
+
+  create_table "uploads", id: false, force: :cascade do |t|
+    t.integer "upload_id"
+    t.integer "uploaddate"
+    t.integer "User"
+    t.text "type"
+    t.integer "folder"
+    t.integer "location"
+    t.text "title"
+  end
+
+  create_table "users", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.text "username"
+    t.text "password"
+    t.text "salt"
+    t.text "name"
+    t.integer "group"
+    t.text "email"
+    t.integer "status"
+  end
+
+  create_table "users_sessions", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.integer "user_id"
+    t.text "hash"
   end
 
 end
