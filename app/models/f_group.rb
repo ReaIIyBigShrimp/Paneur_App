@@ -1,2 +1,0 @@
-class FGroup < ApplicationRecord
-end

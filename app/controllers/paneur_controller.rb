@@ -4,6 +4,9 @@ class PaneurController < ApplicationController
   end
 
   def overview
+    # Testing database connection
+    # If successful, this array will
+    # contain the folders.
     @folders = Folder.all
   end
 

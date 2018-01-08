@@ -22,11 +22,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # Added username and password here
   # if an error stating the missing
-  # missing username and password.
+  # username and password.
   
 development:
   <<: *default
-  database: pancake
+  database: paneur_20
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

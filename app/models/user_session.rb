@@ -1,2 +1,0 @@
-class UserSession < ApplicationRecord
-end

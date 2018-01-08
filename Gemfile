@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rmre'
 
 gem 'seed_dump'
+
+gem 'composite_primary_keys', '~> 10'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
