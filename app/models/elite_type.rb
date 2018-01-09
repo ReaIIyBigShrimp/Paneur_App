@@ -3,6 +3,7 @@ class EliteType < ApplicationRecord
     validates_presence_of :Name
     # Read only from database
     after_initialize :readonly!
-    has_many :elites, foreign_key: :TypeId
     
+    # One elite type for many elites
+    has_many :elites, foreign_key: :TypeId
 end

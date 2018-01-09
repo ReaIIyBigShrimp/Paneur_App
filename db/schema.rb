@@ -14,14 +14,14 @@ ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
+  # Model Created
   create_table "Countries", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.text "Description"
     t.integer "FlagId"
     t.string "Name", limit: 255, null: false
     t.index ["FlagId"], name: "IX_Countries_FlagId"
   end
-
+  
   create_table "CountryDocument", primary_key: ["CountryId", "FileId"], force: :cascade do |t|
     t.integer "CountryId", null: false
     t.integer "FileId", null: false
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "FileId", null: false
     t.index ["FileId"], name: "IX_EliteDocument_FileId"
   end
-
+  # Model Created
   create_table "EliteTypes", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "Name", limit: 255, null: false
     t.index ["Name"], name: "AlternateKey_ElitTypeName", unique: true
   end
-
+  # Model Created
   create_table "Elites", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.integer "CountryId", null: false
     t.text "Description"
@@ -47,18 +47,18 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["CountryId"], name: "IX_Elites_CountryId"
     t.index ["TypeId"], name: "IX_Elites_TypeId"
   end
-
+  # Model Created
   create_table "FileLanguage", primary_key: ["LanguageId", "FileId"], force: :cascade do |t|
     t.integer "LanguageId", null: false
     t.integer "FileId", null: false
     t.index ["FileId"], name: "IX_FileLanguage_FileId"
   end
-
+  # Model Created
   create_table "FileTypes", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "Name", limit: 255, null: false
     t.index ["Name"], name: "AlternateKey_FileTypeName", unique: true
   end
-
+  # Model Created
   create_table "Files", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "ArchivalCode", limit: 255
     t.oid "Date", null: false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "TypeId"
     t.index ["TypeId"], name: "IX_Files_TypeId"
   end
-
+  # Model Created
   create_table "Languages", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "Name", limit: 255, null: false
     t.index ["Name"], name: "AlternateKey_LanguageName", unique: true
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "PersonId", null: false
     t.index ["PersonId"], name: "IX_PersonNationality_PersonId"
   end
-
+  
   create_table "PersonPerson", primary_key: ["PersonId", "OtherPersonId"], force: :cascade do |t|
     t.integer "PersonId", null: false
     t.integer "OtherPersonId", null: false

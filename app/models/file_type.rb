@@ -4,6 +4,4 @@ class FileType < ApplicationRecord
 
     after_initialize :readonly!
     has_many :files, foreign_key: :TypeId #, class_name: "DBFile"
-    
-    
 end
