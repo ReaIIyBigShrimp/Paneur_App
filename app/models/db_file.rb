@@ -10,7 +10,7 @@ class DBFile < ApplicationRecord
     has_many   :file_languages  , foreign_key: :FileId      , class_name: "Relations::FileLanguage"
     has_many   :languages       , through: :file_languages
     
-    # Relationship for elites - Connects to junction entity "EliteDocument"
+    # Elites
     has_many   :elite_documents , foreign_key: :FileId , class_name: "Relations::EliteDocument"
     has_many   :elites          , through: :elite_documents
 end
