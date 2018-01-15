@@ -147,18 +147,20 @@
         // Variable to toggle
         var optionIsUsed = true;
         // Switches between charts 'Demographics' + 'Marketing Results'.
-        // This function is run on clicking the button.
+        // This function is run on the applicable button click.
         var toggle = function () {
             console.log("Changing chart's content...");
             if (optionIsUsed) {
                 myChart.setOption(newOption);
                 optionIsUsed = false;
+                // Remove
                 console.log("First option is used: " + optionIsUsed);
             } else {
                 console.log(optionIsUsed);
                 myChart.setOption(option);
                 // Reset setOption value (toggle)
                 optionIsUsed = true;
+                // Remove
                 console.log("First option is used: " + optionIsUsed);
             }
         };

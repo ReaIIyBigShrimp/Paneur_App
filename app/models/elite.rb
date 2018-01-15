@@ -8,8 +8,4 @@ class Elite < ApplicationRecord
     # Many Files
     has_many :elite_documents, foreign_key: :EliteId    , class_name: "Relations::EliteDocument"
     has_many :files          , through: :elite_documents, class_name: "DBFile"
-    
-    # Copied from "language.rb" as reference
-    # has_many :file_languages , foreign_key: :LanguageId , class_name: "Relations::FileLanguage"
-    # has_many :files          , through: :file_languages , class_name: "DBFile"
 end
