@@ -3,5 +3,6 @@ class FileType < ApplicationRecord
     validates_presence_of :Name
     
     after_initialize :readonly!
-    has_many :files, foreign_key: :TypeIds, class_name: "DBFile"
+    
+    has_many :files, foreign_key: :TypeId, class_name: "DBFile"
 end

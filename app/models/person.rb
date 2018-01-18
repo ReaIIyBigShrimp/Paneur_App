@@ -8,5 +8,11 @@ class Person < ApplicationRecord
 
     #Documents
     has_many :person_documents      , foreign_key: :PersonId, class_name: "Relations::PersonDocument"
-    has_many :files             , through: :person_documents
+    has_many :files                 , through: :person_documents
+
+    # Elites
+    has_many :people_elites         , foreign_key: :PersonId, class_name: "PeopleElite"
+    
+    # Reference - Remove
+    #has_many :files                 , foreign_key: :TypeId , class_name: "DBFile"
 end

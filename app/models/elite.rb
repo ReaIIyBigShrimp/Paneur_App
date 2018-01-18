@@ -8,4 +8,7 @@ class Elite < ApplicationRecord
     # Many Files
     has_many :elite_documents, foreign_key: :EliteId    , class_name: "Relations::EliteDocument"
     has_many :files          , through: :elite_documents, class_name: "DBFile"
+
+    has_many :people_elites  , foreign_key: :EliteId, class_name: "PeopleElite"
+
 end
