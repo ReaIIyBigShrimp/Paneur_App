@@ -13,8 +13,9 @@ class DBFile < ApplicationRecord
     
     # Elites
     has_many   :elite_documents , foreign_key: :FileId , class_name: "Relations::EliteDocument"
+    # Comment these out
     has_many   :elites          , through: :elite_documents
-
+    
     # People
     has_many  :person_documents , foreign_key: :FileId , class_name: "Relations::PersonDocument"
     has_many  :people           , through: :person_documents

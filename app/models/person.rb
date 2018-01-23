@@ -11,8 +11,10 @@ class Person < ApplicationRecord
     has_many :files                 , through: :person_documents
 
     # Elites
-    has_many :people_elites         , foreign_key: :PersonId, class_name: "PeopleElite"
+    has_many :people_elites         , foreign_key: :PersonId
     
-    # Reference - Remove
-    #has_many :files                 , foreign_key: :TypeId , class_name: "DBFile"
+    # OtherPerson
+    has_many :person_persons        , foreign_key: :PersonId, class_name: "Relations::PersonPerson"
+    has_many :people                , through: :person_persons
+    
 end
