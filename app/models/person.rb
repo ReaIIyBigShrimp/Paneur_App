@@ -15,6 +15,18 @@ class Person < ApplicationRecord
     
     # OtherPerson
     has_many :person_persons        , foreign_key: :PersonId, class_name: "Relations::PersonPerson"
-    has_many :people                , through: :person_persons
     
+    
+    def people
+        Person.find_by_sql(
+            "SELECT p.* FROM \"People\" p
+            LEFT JOIN \"PersonPerson\" r1 
+                ON p.\"Id\" = r1.\"PersonId\" 
+                AND r1.\"OtherPersonId\" = #{self.Id}
+            LEFT JOIN \"PersonPerson\" r2
+                ON p.\"Id\" = r2.\"OtherPersonId\" 
+                AND r2.\"PersonId\" = #{self.Id}
+            WHERE r1.\"PersonId\" IS NOT NULL OR r2.\"PersonId\" IS NOT NULL;"
+        )
+    end
 end

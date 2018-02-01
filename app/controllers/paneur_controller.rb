@@ -1,7 +1,8 @@
 class PaneurController < ApplicationController
   # Define layout here
   # Override default application layout
-
+  layout "map"
+  
   def map
     # To act as index page.
   end
