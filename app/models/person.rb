@@ -16,7 +16,7 @@ class Person < ApplicationRecord
     # OtherPerson
     has_many :person_persons        , foreign_key: :PersonId, class_name: "Relations::PersonPerson"
     
-    
+    # Selects related person entities
     def people
         Person.find_by_sql(
             "SELECT p.* FROM \"People\" p

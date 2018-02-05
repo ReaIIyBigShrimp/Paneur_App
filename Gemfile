@@ -29,13 +29,25 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
 # Gem for generating models
 # Create the models. 
+gem 'bootstrap', '~> 4.0'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
+gem 'simple-line-icons-rails', '~> 0.1.3'
+gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
+gem 'magnific-popup-rails', '~> 1.1'
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'vibe', '~> 1.0'
+
+
 gem 'rmre'
 
 gem 'seed_dump'
 
 gem 'composite_primary_keys', '~> 10'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :development, :test do
