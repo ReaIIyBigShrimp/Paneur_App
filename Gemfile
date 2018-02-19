@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -16,6 +15,7 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -30,17 +30,23 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Gem for generating models
-# Create the models. 
 gem 'bootstrap', '~> 4.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'simple-line-icons-rails', '~> 0.1.3'
 gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
 gem 'magnific-popup-rails', '~> 1.1'
 
+# jquery appear - No gem
+gem 'jquery-easing-rails', '~> 0.0.2'
+# gem 'jquery-cookie-rails', '~> 1.3', '>= 1.3.1.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
-gem 'vibe', '~> 1.0'
-
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+gem 'jquery-validation-rails', '~> 1.16'
+# gem 'stellar-js-rails', '~> 0.6.2.1'
+# gem 'lazyload-rails', '~> 0.3.1'
+# gem 'isotope-rails', '~> 2.2', '>= 2.2.2'
+gem 'easy_as_pie', '~> 0.1.2'
+# gem 'vibe', '~> 1.0'
 
 gem 'rmre'
 
@@ -57,7 +63,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
-
+# Dev only
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

@@ -10,10 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  * 
- *= require_tree .
+ 
  *= require theme
  *= require theme-elements
  *= require theme-animate
  *= require ie
  *= require_self
+ *= require jquery.easy-pie-chart
+ *= require owl.carousel
+ *= require owl.theme
+ *= require magnific-popup
+ *= require_tree .
+ 
  */
+
