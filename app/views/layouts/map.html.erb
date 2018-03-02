@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Map View</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="keywords" content="" />
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Web Fonts  -->
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
     
     <!-- Link stylesheets here -->
+    <%= stylesheet_link_tag('theme') %>
+    <%= stylesheet_link_tag('theme-elements') %>
+    <%= stylesheet_link_tag('theme-animate') %>
   </head>
 
   <body>

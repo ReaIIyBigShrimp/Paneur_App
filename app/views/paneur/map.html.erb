@@ -1,5 +1,7 @@
+<!--
 <h1>Paneur#map</h1>
 <p>Find me in app/views/paneur/map.html.erb</p>
+-->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom  botmenutrasparente">
   <div class="container-fluid">
@@ -11,76 +13,126 @@
       </button>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-     <ul class="nav navbar-nav">
-		 <li class="botmenu"><a href="about.html">ABOUT THIS MAP</a></li></ul>
-    
-    <ul class="nav navbar-nav navbar-right">
-      <li class="botmenu"><a href="index.html">Main map</a></li>
-      <li class="dropdown botmenu">
-        <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-         <li class="botsubmenu"><a href="country.html">Bulgaria</a></li>
-          <li class="botsubmenu"><a href="country.html">Czechoslovakia</a></li>
-          <li class="botsubmenu"><a href="country.html">Germany</a></li>
-          <li class="botsubmenu"><a href="country.html">Hungary</a></li>
-          <li class="botsubmenu"><a href="country.html">Yugoslavia</a></li>
-          <li class="botsubmenu"><a href="country.html">Poland</a></li>
-          <li class="botsubmenu"><a href="country.html">Romania</a></li>
-        </ul>
-      </li>
-      <li class="botmenu"><a href="comecon.html">Comecon</a></li>
-      <li class="botmenu"><a href="https://paneur1970s.eui.eu/">PanEur1970s website</a></li>
-    </ul>
-	  </div>
+      <ul class="nav navbar-nav">
+        <li class="botmenu">
+          <a href="about.html">ABOUT THIS MAP</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="botmenu">
+          <a href="index.html">Main map</a>
+        </li>
+        <li class="dropdown botmenu">
+          <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="botsubmenu">
+              <a href="country.html">Bulgaria</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Czechoslovakia</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Germany</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Hungary</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Yugoslavia</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Poland</a>
+            </li>
+            <li class="botsubmenu">
+              <a href="country.html">Romania</a>
+            </li>
+          </ul>
+        </li>
+        <li class="botmenu">
+          <a href="comecon.html">Comecon</a>
+        </li>
+        <li class="botmenu">
+          <a href="https://paneur1970s.eui.eu/">PanEur1970s website</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <!-- End of Navigation-->
 <!-- Insert the map here -->
 <div class="body">
-			<header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
-				
-			</header>
+  <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
 
-			<div role="main" class="main">
+  </header>
 
-				<section class="page-header">
-				<div class="hidden-xs hidden-sm container">
-						<div class="row">
-							<div class="col-md-6">
-                <%= image_tag('dep.svg') %>
-								<!-- >
+  <div role="main" class="main">
+
+    <section class="page-header">
+      <div class="hidden-xs hidden-sm container">
+        <div class="row">
+          <div class="col-md-6">
+            <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
+              <!-- >
                 <img src="img/dep.svg" align="left" height="70px">
                 -->
-							</div>
-							<div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;"><img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px">This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and innovation programme<br/> (Grant Agreement n. 669194) <!-- Large button group -->
-							</div>
-							</div>
-						</div>
-						
-					</div>	
-				</section>
+          </div>
+          <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
+            <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>%
+              <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
+              This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
+              innovation programme
+              <br/> (Grant Agreement n. 669194)
+              <!-- Large button group -->
+          </div>
+        </div>
+      </div>
 
-				<div class="container" style="padding-top:-100px;">
+  </div>
+  </section>
 
-					<div class="row" style="padding-top:-100px;">
-						
-						<!--<div class="col-md-12"> <!-- Large button group -->
-							<!--<h3>Map title</h3></div>-->
-						
-					
-						
-					<div class="col-md-12">	
-					<script type="text/javascript">
-   function calcHeight()
-   {
-    //find the height of the internal page
-    var the_height=
-    document.getElementById('the_iframe').contentWindow.
-    document.body.scrollHeight;
+  <div class="container" style="padding-top:-100px;">
 
-    //change the height of the iframe
-    document.getElementById('the_iframe').height=
-    the_height;
-   }
-   </script>
+    <div class="row" style="padding-top:-100px;">
+
+      <!--<div class="col-md-12"> <!-- Large button group -->
+      <!--<h3>Map title</h3></div>-->
+
+
+
+      <div class="col-md-12">
+        <script type="text/javascript">
+          function calcHeight() {
+            //find the height of the internal page
+            var the_height =
+              document.getElementById('the_iframe').contentWindow.
+            document.body.scrollHeight;
+
+            //change the height of the iframe
+            document.getElementById('the_iframe').height =
+              the_height;
+          }
+        </script>
+        <iframe width="100%" src="mappa.html" scrolling="no" id="the_iframe" onLoad="calcHeight();" height="1px" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <footer id="footer">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-12">
+					<div>
+
+						<p>&copy; copyright info</p>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+  

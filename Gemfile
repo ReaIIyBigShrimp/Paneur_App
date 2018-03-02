@@ -30,14 +30,19 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'sprockets-rails'
+gem 'popper_js'
+gem 'railties'
+
 gem 'bootstrap', '~> 4.0'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'simple-line-icons-rails', '~> 0.1.3'
 gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
 gem 'magnific-popup-rails', '~> 1.1'
 
 # jquery appear - No gem
-gem 'jquery-easing-rails', '~> 0.0.2'
+# gem 'jquery-easing-rails', '~> 0.0.2'
 # gem 'jquery-cookie-rails', '~> 1.3', '>= 1.3.1.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'

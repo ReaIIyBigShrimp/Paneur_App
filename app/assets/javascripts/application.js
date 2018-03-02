@@ -14,10 +14,10 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require popper
+//= require bootstrap-sprockets
 //= require jquery.validate
 //= require jquery.easy-pie-chart
 //= require owl.carousel
 //= require magnific-popup
 //= require_tree .
-
-
