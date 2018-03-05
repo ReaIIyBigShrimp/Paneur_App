@@ -4,15 +4,15 @@
 
 @font-face {
 	font-family: 'MyriadProBoldCondensed';
-	src: url('../fonts/MyriadProBoldCondensed.eot');
-	src: local('MyriadProBoldCondensed'), url('../fonts/MyriadProBoldCondensed.woff') format('woff'), url('../fonts/MyriadProBoldCondensed.ttf') format('truetype');
+	src: url('/fonts/MyriadProBoldCondensed.eot');
+	src: local('MyriadProBoldCondensed'), url('/fonts/MyriadProBoldCondensed.woff') format('woff'), url('/fonts/MyriadProBoldCondensed.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'Myriad Pro';
-	src: url('../fonts/MyriadPro-Cond.eot');
-	src: url('../fontsMyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
-		url(../fonts/'MyriadPro-Cond.woff') format('woff'),
-		url('../fonts/MyriadPro-Cond.ttf') format('truetype');
+	src: url('/fonts/MyriadPro-Cond.eot');
+	src: url('/fontsMyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
+		url(/fonts/'MyriadPro-Cond.woff') format('woff'),
+		url('/fonts/MyriadPro-Cond.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -519,7 +519,7 @@ ul.nav-list li a:hover {
 	font-size: 16px;
 	text-align: right;
 	padding-right: 55px !important;
-	background-image: url('../img/backgroundpaneur.png');
+	background-image: url('/img/backgroundpaneur.png');
     background-repeat: no-repeat;
 	background-position: top right;
 	background-size: 100%;
@@ -634,7 +634,7 @@ ul.nav-list li a:hover {
 	font-size: 16px;
 	text-align: right;
 	padding-right: 55px !important;
-	background-image: url('../img/backgroundpaneurgrey.png');
+	background-image: url('/img/backgroundpaneurgrey.png');
     background-repeat: no-repeat;
 	background-position: top right;
 	background-size: 100%;
@@ -685,7 +685,7 @@ ul.nav-list li a:hover {
 	border-width: 0px !important;
 	border-color: #fff !important;
 	border-radius: 0px;
-	background-image:url(../img/tabelladispari.png);
+	background-image:url(/img/tabelladispari.png);
 	background-repeat:repeat-y;
 	background-position: top right;
 	background-size: 24px;
@@ -720,7 +720,7 @@ ul.nav-list li a:hover {
 	color: #ffffff;
 	font-size: 30px;
 	text-align: right;
-		background-image: url('../img/backgroundmega.png');
+		background-image: url('/img/backgroundmega.png');
     background-repeat: no-repeat;
 	background-position: top left;
 	margin-bottom: 20px;
@@ -737,7 +737,7 @@ ul.nav-list li a:hover {
 	font-size: 30px;
 	text-align: right;
 	padding-right: 20px !important;
-	/*background-image: url('../img/backgroundmega.png');
+	/*background-image: url('/img/backgroundmega.png');
     background-repeat: no-repeat;
 	background-position: top right;
 	background-size: 100%;*/
@@ -758,7 +758,7 @@ ul.nav-list li a:hover {
 	font-size: 30px;
 	text-align: right;
 	padding-right: 20px !important;
-	/*background-image: url('../img/backgroundmega2.png');
+	/*background-image: url('/img/backgroundmega2.png');
     background-repeat: no-repeat;
 	background-position: top left;
 	background-size: 100%;*/
@@ -1097,21 +1097,21 @@ background-color: #dddddd;
 }
 li.documenti:nth-child(odd) {
 background-color: #f2f2f2;
-background-image: url('../img/tabelladispari.png');
+background-image: url('/img/tabelladispari.png');
 background-repeat: repeat-y;
 background-position: top left;
 background-size: 10px;
 }
 li.documenti:nth-child(even) {
 background-color: #dddddd;
-background-image: url('../img/tabellapari.png');
+background-image: url('/img/tabellapari.png');
 background-repeat: repeat-y;
 background-position: top left;
 background-size: 10px;
 }
 li.documenti:nth-child(odd) a {
 background-color: #f2f2f2;
-background-image: url('../img/tabelladispari.png');
+background-image: url('/img/tabelladispari.png');
 background-repeat: repeat-y;
 background-position: top left;
 background-size: 10px;
@@ -1121,7 +1121,7 @@ text-transform: none;
 }
 li.documenti:nth-child(even) a {
 background-color: #dddddd;
-background-image: url('../img/tabellapari.png');
+background-image: url('/img/tabellapari.png');
 background-repeat: repeat-y;
 background-position: top left;
 background-size: 10px;
@@ -2210,7 +2210,7 @@ margin-top: 20px !important;
 	border-width: 0px !important;
 	border-color: #fff !important;
 	border-radius: 0px;
-	background-image:url(../img/tabelladispari.png);
+	background-image:url(/img/tabelladispari.png);
 	background-repeat:repeat-y;
 	background-position: top right;
 	background-size: 24px;
@@ -3114,7 +3114,7 @@ margin-top: 20px !important;
 }
 /* Carousel Areas */
 .carousel-areas {
-	background: transparent url(../img/patterns/stripes.png) repeat 0 0;
+	background: transparent url(/img/patterns/stripes.png) repeat 0 0;
 	margin-bottom: -10px;
 	padding: 10px 10px 0 10px;
 	border-radius: 6px 6px 0 0;
@@ -3159,7 +3159,7 @@ section.video .container {
 }
 
 section.video .video-overlay {
-	background: transparent url(../img/video-overlay.png) repeat 0 0;
+	background: transparent url(/img/video-overlay.png) repeat 0 0;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -3785,7 +3785,7 @@ html[xmlns] .clearfix {
 
 /* Custom Underline */
 .custom-underline {
-	background: url(../img/custom-underline.png) no-repeat center 100%;
+	background: url(/img/custom-underline.png) no-repeat center 100%;
 	padding-bottom: 25px;
 	font-size: 1.5em;
 }
@@ -4008,7 +4008,7 @@ hr.pattern, .divider.pattern {
 }
 
 hr.pattern:after, .divider.pattern:after {
-	background: transparent url(../img/patterns/worn_dots.png) repeat 0 0;
+	background: transparent url(/img/patterns/worn_dots.png) repeat 0 0;
 	content: "";
 	display: block;
 	height: 15px;
@@ -4019,7 +4019,7 @@ hr.pattern:after, .divider.pattern:after {
 }
 
 hr.pattern.pattern-2:after, .divider.pattern.pattern-2:after {
-	background-image: url(../img/patterns/az_subtle.png);
+	background-image: url(/img/patterns/az_subtle.png);
 }
 
 /* Sort Source Wrapper */
@@ -6310,7 +6310,7 @@ section.timeline .timeline-box .owl-carousel {
 
 /* Arrows */
 .arrow {
-	background: transparent url(../img/arrows.png) no-repeat 0 0;
+	background: transparent url(/img/arrows.png) no-repeat 0 0;
 	width: 47px;
 	height: 120px;
 	display: inline-block;
@@ -6318,7 +6318,7 @@ section.timeline .timeline-box .owl-carousel {
 }
 
 .arrow.arrow-light {
-	background-image: url(../img/arrows-dark.png);
+	background-image: url(/img/arrows-dark.png);
 }
 
 .arrow.vtl {
@@ -6949,7 +6949,7 @@ html.ie11 .scroll-to-top {
 .flag {
 	width: 16px;
 	height: 11px;
-	background: url(../img/flags.png) no-repeat;
+	background: url(/img/flags.png) no-repeat;
 }
 
 .flag.flag-ad {
@@ -8354,7 +8354,7 @@ ul.history li p {
 }
 
 ul.history li .thumb {
-	background: transparent url(../img/history-thumb.png) no-repeat 0 0;
+	background: transparent url(/img/history-thumb.png) no-repeat 0 0;
 	width: 227px;
 	height: 160px;
 	margin: 0 0 30px;
