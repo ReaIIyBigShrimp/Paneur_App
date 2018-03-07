@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   #get 'paneur/archival_sources'
 
-  #get 'paneur/country'
+  get 'paneur/country'
 
   # get 'items/show'
   # get 'items/view_all'

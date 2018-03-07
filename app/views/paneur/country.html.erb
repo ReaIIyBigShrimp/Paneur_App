@@ -1,15 +1,9 @@
-<h1>Paneur#country</h1>
-<p>Find me in app/views/paneur/country.html.erb</p>
 
 <% @countries.each do |country| %>
     <h1>Country List</h1>
     <tr>
-      <td><%= country.title %></td>
-      <td><%= country.text %></td>
-      <!-- 
-      <td><%= link_to 'Show', item_path(item) %></td>
-      <td><%= link_to 'Edit', edit_item_path(item)%></td>
-      <td><%= link_to 'Delete', item_path(item), method: :delete, data: {confirm: 'Confirm deletion?'} %></td>
-    -->
+      <td><%= country.id %></td>
+      <td><%= country.Name %></td>
+      
     </tr>
   <% end %>
