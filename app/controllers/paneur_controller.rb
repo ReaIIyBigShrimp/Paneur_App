@@ -1,9 +1,9 @@
 class PaneurController < ApplicationController
   # Define layout here
   # Override default application layout
-  #layout "map"
+  layout "map"
   
-  layout :select_layout
+  #layout :select_layout
 
   def select_layout
     case action_name

@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   root to: "paneur#map"
 
-
  # get 'paneur/overview'
 
   #get 'paneur/archival_sources'
 
-  get 'paneur/country'
-
+  # Map
+  get 'paneur/map'
+  # Country
+  get 'country/show'
   # get 'items/show'
   # get 'items/view_all'
   # get 'items/new'
