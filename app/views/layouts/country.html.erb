@@ -27,175 +27,207 @@
     <%= stylesheet_link_tag('theme-animate') %>
 </head>
 
+
+
 <body>
-    <span class="visible-xs visible-sm">
-        <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
+    <div class="body">
+        <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
+
+        </header>
+
+        <div role="main" class="main">
+
+            <section class="page-header">
+                <div class="hidden-xs hidden-sm container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
+                                <!-- >
+                <img src="img/dep.svg" align="left" height="70px">
+                -->
+                        </div>
+                        <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
+                            <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
+                                <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
+                                This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
+                                innovation programme
+                                <br/> (Grant Agreement n. 669194)
+                                <!-- Large button group -->
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </section>
+
+        <span class="visible-xs visible-sm">
+            <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <span class="navbar-brand topmenu">HUNGARY</span>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartop">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbartop">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="topmenu">
+                                <a data-hash data-hash-offset="30" href="#overview">Overview</a>
+                            </li>
+                            <li class="topmenu">
+                                <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+                            </li>
+                            <li class="dropdown topmenu">
+                                <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="topsubmenured">
+                                        <a href="elitegroups.html">Main page</a>
+                                    </li>
+                                    <li class="topsubmenu">
+                                        <a href="group.html">Party</a>
+                                    </li>
+                                    <li class="topsubmenu">
+                                        <a href="group.html">Government</a>
+                                    </li>
+                                    <li class="topsubmenu">
+                                        <a href="group.html">Central Bank</a>
+                                    </li>
+                                    <li class="topsubmenu">
+                                        <a href="group.html">Trade Organisations</a>
+                                    </li>
+                                    <li class="topsubmenu">
+                                        <a href="group.html">Academia</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </span>
+        <!-- FINE NAVIGAZIONE FISSA TOP (RESPONSIVE) -->
+
+
+
+        <!-- NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
+        <nav class="navbar navbar-inverse navbar-fixed-bottom navbar-right  botmenutrasparente">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <span class="navbar-brand topmenu">HUNGARY</span>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartop">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbartop">
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="botmenu">
+                            <a href="about.html">ABOUT THIS MAP</a>
+                        </li>
+                    </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="topmenu">
-                            <a data-hash data-hash-offset="30" href="#overview">Overview</a>
+                        <li class="botmenu">
+                            <a href="index.html">Main map</a>
                         </li>
-                        <li class="topmenu">
-                            <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-                        </li>
-                        <li class="dropdown topmenu">
-                            <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
+                        <li class="dropdown botmenu">
+                            <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
-                                <li class="topsubmenured">
-                                    <a href="elitegroups.html">Main page</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Bulgaria</a>
                                 </li>
-                                <li class="topsubmenu">
-                                    <a href="group.html">Party</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Czechoslovakia</a>
                                 </li>
-                                <li class="topsubmenu">
-                                    <a href="group.html">Government</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Germany</a>
                                 </li>
-                                <li class="topsubmenu">
-                                    <a href="group.html">Central Bank</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Hungary</a>
                                 </li>
-                                <li class="topsubmenu">
-                                    <a href="group.html">Trade Organisations</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Yugoslavia</a>
                                 </li>
-                                <li class="topsubmenu">
-                                    <a href="group.html">Academia</a>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Poland</a>
+                                </li>
+                                <li class="botsubmenu">
+                                    <a href="country.html">Romania</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li class="botmenu">
+                            <a href="comecon.html">Comecon</a>
+                        </li>
+                        <li class="botmenu">
+                            <a href="https://paneur1970s.eui.eu/">PanEur1970s website</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </span>
-    <!-- FINE NAVIGAZIONE FISSA TOP (RESPONSIVE) -->
+        <div class="col-md-3 hidden-xs hidden-sm">
+            <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>
+
+                <div class="nomepaese">Hungary</div>
+                <img src="img/Hungary.png" width="100%">
+                <div class="titolo">
+                    <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
+                </div>
+                <ul class="nav nav-list mb-xl show-bg-active">
 
 
+                    <li>
 
-    <!-- NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
-    <nav class="navbar navbar-inverse navbar-fixed-bottom navbar-right  botmenutrasparente">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="botmenu">
-                        <a href="about.html">ABOUT THIS MAP</a>
+                        <div id="subli" style="padding-top:10px;">
+                            <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+
+                            <div id="spazio"></div>
                     </li>
+
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="botmenu">
-                        <a href="index.html">Main map</a>
+
+                <div class="titolobn">
+                    <a href="elitegroups.html">Elite groups</a>
+                </div>
+                <ul class="nav nav-list mb-xl show-bg-active2">
+
+                    <li>
+                        <a href="group.html">Party</a>
                     </li>
-                    <li class="dropdown botmenu">
-                        <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="botsubmenu">
-                                <a href="country.html">Bulgaria</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Czechoslovakia</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Germany</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Hungary</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Yugoslavia</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Poland</a>
-                            </li>
-                            <li class="botsubmenu">
-                                <a href="country.html">Romania</a>
-                            </li>
-                        </ul>
+                    <li>
+                        <a href="group.html">Government</a>
                     </li>
-                    <li class="botmenu">
-                        <a href="comecon.html">Comecon</a>
+                    <li>
+                        <a href="group.html">Central bank</a>
                     </li>
-                    <li class="botmenu">
-                        <a href="https://paneur1970s.eui.eu/">PanEur1970s website</a>
+                    <li>
+                        <a href="group.html">Trade organisations</a>
                     </li>
+                    <li>
+                        <a href="group.html">Academia</a>
+                    </li>
+
+
                 </ul>
+
+
+            </aside>
             </div>
+
         </div>
-    </nav>
-<div class="col-md-3 hidden-xs hidden-sm">
-    <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>
-
-        <div class="nomepaese">Hungary</div>
-        <img src="img/Hungary.png" width="100%">
-        <div class="titolo">
-            <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
-        </div>
-        <ul class="nav nav-list mb-xl show-bg-active">
-
-
-            <li>
-
-                <div id="subli" style="padding-top:10px;">
-                    <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-
-                    <div id="spazio"></div>
-            </li>
-
-        </ul>
-
-
-        <div class="titolobn">
-            <a href="elitegroups.html">Elite groups</a>
-        </div>
-        <ul class="nav nav-list mb-xl show-bg-active2">
-
-            <li>
-                <a href="group.html">Party</a>
-            </li>
-            <li>
-                <a href="group.html">Government</a>
-            </li>
-            <li>
-                <a href="group.html">Central bank</a>
-            </li>
-            <li>
-                <a href="group.html">Trade organisations</a>
-            </li>
-            <li>
-                <a href="group.html">Academia</a>
-            </li>
-
-
-        </ul>
-
-
-    </aside>
-    </div>
-
-</div>
-    <!-- FINE NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
-    <!-- Start of yield -->
-    <%= yield %>
-    <!-- End of yield -->
+        <!-- FINE NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
+        <!-- Start of yield -->
+        <%= yield %>
+            <!-- End of yield -->
 </body>
 
 </html>
