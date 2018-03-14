@@ -4,7 +4,7 @@ class PaneurController < ApplicationController
   layout "map"
   
   #layout :select_layout
-
+  
   def select_layout
     case action_name
     when "map"
