@@ -645,7 +645,7 @@ ul.nav-list li a:hover {
 	margin-right:-6px;
 }
 
-.titolobn a {
+.titolobn span {
 
 	color: #ffffff !important;
 	text-transform: uppercase;
@@ -653,7 +653,7 @@ ul.nav-list li a:hover {
 	
 }
 
-.titolobn a:hover {
+.titolobn span:hover {
 
 	color: #ddd !important;
 	text-transform: uppercase;

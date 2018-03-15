@@ -1,4 +1,104 @@
+<% content_for :name do %>
+	<%= @country.Name %>
+<% end %>
+
+<% content_for :elite_groups do %>
+	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
+	<% grouped_elites.each do |type, elite| %>
+		<li>
+			<%= link_to type, elite %>
+		</li>
+	<% end %>
+<% end %>
 
 
-<h2><%= @country.id %></h2>
-<h2><%= @country.Name %></h2>
+<% content_for :content do  %>
+
+	<div class="row rowmega" id="overview">
+		<div class="titolomega hidden-xs hidden-sm col-md-8">&nbsp;
+			<span class="visible-xs visible-sm">
+				<%= @country.Name %>
+			</span>
+		</div>
+		<div class="titolomega2 hidden-xs col-md-4">Overview</div>
+	</div>
+
+	<%= @country.Description %>
+		<!-- Add paragraphs if double return -->
+
+
+	<div style="padding-top:60px;"></div>
+
+	<div class="fascia" id="archival" style="padding-top:10px; padding-bottom:10px;">
+		<h4 class="panel-title" style="text-align:right; font-size:22px; padding-right:10px;">Archival sources</h4>
+	</div>
+	<p style="padding-top:25px;"></p>
+
+	<!--<div class="row rowmega" id="archival"><div class="titolomega hidden-xs hidden-sm col-md-8" id="#archival">&nbsp;</div><div class="titolomega2 col-md-4">Archival sources</div></div>-->
+	<ul class="nav nav-list mb-xl">
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+			</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+			</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
+		</li>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
+		</li>
+	</ul>
+
+
+<% end %>
