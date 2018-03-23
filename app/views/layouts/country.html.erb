@@ -27,8 +27,6 @@
     <%= stylesheet_link_tag('theme-animate') %>
 </head>
 
-
-
 <body>
     <div class="body">
         <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
@@ -133,7 +131,8 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li class="botmenu">
-                            <a href="index.html">Main map</a>
+                            <!-- <a href="index.html">Main map</a> -->
+                            <%= link_to 'Main Map', '/'%>
                         </li>
                         <li class="dropdown botmenu">
                             <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries

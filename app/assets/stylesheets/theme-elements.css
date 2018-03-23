@@ -10,8 +10,8 @@
 @font-face {
 	font-family: 'Myriad Pro';
 	src: url('/fonts/MyriadPro-Cond.eot');
-	src: url('/fontsMyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
-		url(/fonts/'MyriadPro-Cond.woff') format('woff'),
+	src: url('/fonts/MyriadPro-Cond.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/MyriadPro-Cond.woff') format('woff'),
 		url('/fonts/MyriadPro-Cond.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;

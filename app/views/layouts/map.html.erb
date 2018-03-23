@@ -28,6 +28,53 @@
   </head>
 
   <body>
+    <!-- NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom navbar-right  botmenutrasparente">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="botmenu">
+                        <a href="about.html">ABOUT THIS MAP</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="botmenu">
+                        <!-- <a href="index.html">Main map</a> -->
+                        <%= link_to('Main Map', {action: 'map'})%>
+                    </li>
+                    <li class="dropdown botmenu">
+                        <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <% Country.all.order(:Name).each do |country| %>
+                                <li class="botsubmenu">
+                                    <%= link_to country.Name, country  %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </li>
+                    <li class="botmenu">
+                        <a href="comecon.html">Comecon</a>
+                    </li>
+                    <li class="botmenu">
+                        <%= link_to('PanEur1970s website', 'https://paneur1970s.eui.eu/')%>
+                        <!-- <a href="https://paneur1970s.eui.eu/">PanEur1970s website</a>-->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <!-- FINE NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
     <!-- Start of yield -->
     <%= yield %>
     <!-- End of yield -->
