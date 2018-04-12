@@ -4,8 +4,8 @@
 
 @font-face {
 	font-family: 'MyriadProBoldCondensed';
-	src: url('/fonts/MyriadProBoldCondensed.eot');
-	src: local('MyriadProBoldCondensed'), url('/fonts/MyriadProBoldCondensed.woff') format('woff'), url('/fonts/MyriadProBoldCondensed.ttf') format('truetype');
+	src: url('MyriadProBoldCondensed.eot');
+	src: local('MyriadProBoldCondensed'), url('MyriadProBoldCondensed.woff') format('woff'), url('/fonts/MyriadProBoldCondensed.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'Myriad Pro';

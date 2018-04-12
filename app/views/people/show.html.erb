@@ -1,0 +1,235 @@
+<% content_for :name do %>
+	<%= @person.Name + " " + @person.Surname %>
+<% end %>
+
+
+
+
+<% content_for :content do  %>
+
+
+	<script>
+		function goBack() {
+			window.history.go(-1);
+		}
+	</script>
+	<div class="row rowmega" id="overview">
+		<div class="titolomega col-md-8 hidden-xs hidden-sm" style="text-align: left; padding-left: 20px; font-size: 20px;">
+			<a href="#" onClick="history.go(-1); return false;" style="color: #fff; text-decoration:none; padding-left:80px;">&#8592; Back</a>
+		</div>
+		<div class="titolomega2 col-md-4 hidden-xs hidden-sm"><%= @person.Name + " " + @person.Surname %></div>
+	</div>
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-9 col-xs-7 col-sm-8">
+				<div class="shortlife"><%= @person.Description %>(Budapest, 1934 - Warsaw, 1990)
+					<br/> Professor of international political economy - Corvinus University of Budapest
+                </div>
+			</div>
+			<div class="col-md-3 col-xs-5 col-sm-4">
+                <!-- Add class, adding 100% width property. -->
+                <%= image_tag('person.jpg') %>
+			</div>
+
+		</div>
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-toggle " data-panel="0" data-toggle="collapse" data-parent="#accordion" href="#collapse1One">
+							Short bio
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1One" class="accordion-body collapse in">
+					<div class="panel-body">
+						<p>He graduated as an economist at the Karl Marx University of Economics in 1976. He was researcher in the Institute for
+							Research on World Economy of the HAS between 1976 and 1988, then he changed to the Kopint-Datorg Research Institute.
+							After 1991 he taught at the Foreign Trade College, the Budapest University of Economics and the University of Debrecen.
+							From 2000 he is professor of international political economy at Central European University and Corvinus University
+							of Budapest. He holds his PhD since 1984, he is Doctor of Sciences since 1996. He was visiting professor in Milan
+							(Bocconi, 1991), Helsinki (1993), Frankfurt an der Oder (Europa-Universität, 1997), Berlin (Freie Universität, 1998–2000).
+							He is member of the HAS since 2007. His main research field is comparative economics and the international economic
+							relations. He sharply criticized the ineffectiveness of the CMEA from the early 1980s, deeply analysed the post-communist
+							economic transition process.</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
+							Relations
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1Two" class="accordion-body collapse">
+					<div class="panel-body">
+						<table class="table table-striped">
+							<tbody>
+								<tr>
+									<td width="90%">
+										<div class="contactname">
+											<a href="person.html">Nome Cognome</a>
+										</div>
+										<div class="contactdesc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+											eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+											velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+									</td>
+									<td>
+										<div class="hidden-xs">
+											<a href="person.html">
+												<!-- <img src="img/person.jpg" width="100%"> -->
+                                                <%= image_tag('person.jpg') %>
+											</a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="contactname">
+											<a href="person.html">Nome Cognome</a>
+										</div>
+										<div class="contactdesc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+											eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+											voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+											voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+											velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+									</td>
+									<td>
+										<div class="hidden-xs">
+											<a href="person.html">
+												<!-- <img src="img/person.jpg" width="100%"> -->
+                                                <%= image_tag('person.jpg') %>
+											</a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div id "accordion" class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
+							Documents
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1Three" class="accordion-body collapse">
+					<div class="panel-body">
+						<table class="table table-striped">
+							<tbody>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/pdf_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/xls_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/doc_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/pdf_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/zip_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/doc_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+								<tr>
+									<td width="90%">
+										<div class="doctitle">
+											<a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+										</div>
+										<div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua. Ut enim ad minim veniam.</div>
+									</td>
+									<td>
+										<a href="doc/nomedocumento.pdf" target="_blank">
+											<img src="img/ppt_doc.png" width="100%">
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<% end %>

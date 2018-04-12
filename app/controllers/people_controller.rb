@@ -2,6 +2,8 @@ class PeopleController < ApplicationController
     layout 'person'
 
     def show
-        render('person')
+        #render('person')
+        @person = Person.find(params[:id])
+        render('show')
     end
 end
