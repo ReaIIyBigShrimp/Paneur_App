@@ -54,9 +54,9 @@
                         </div>
                     </div>
                 </div>
-
-        </div>
+        
         </section>
+        </div>
 
         <span class="visible-xs visible-sm">
             <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
@@ -165,6 +165,63 @@
 
                 <div class="col-md-9">
                     <%= yield :content %>
+                    <script>
+						function goBack() {
+							window.history.go(-1);
+						}
+					</script>
+	<div class="row rowmega" id="overview">
+		<div class="titolomega col-md-8 hidden-xs hidden-sm" style="text-align: left; padding-left: 20px; font-size: 20px;">
+			<a href="#" onClick="history.go(-1); return false;" style="color: #fff; text-decoration:none; padding-left:80px;">&#8592; Back</a>
+		</div>
+		<div class="titolomega2 col-md-4 hidden-xs hidden-sm"><%= @person.Name + " " + @person.Surname %></div>
+	</div>
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-9 col-xs-7 col-sm-8">
+				<div class="shortlife"><%= @person.Description %>(Budapest, 1934 - Warsaw, 1990)
+					<br/> Professor of international political economy - Corvinus University of Budapest
+                </div>
+			</div>
+			<div class="col-md-3 col-xs-5 col-sm-4">
+                <!-- Add class, adding 100% width property. -->
+                <%= image_tag('person.jpg') %>
+			</div>
+
+		</div>
+   		<div class="panel-group" id="accordion">
+
+			<%= yield :short_bio %>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
+							Relations
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1Two" class="accordion-body collapse">
+					<div class="panel-body">
+						<%= yield :related_people %>
+					</div>
+				</div>
+			</div>
+			<div id "accordion" class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
+							Documents
+						</a>
+					</h4>
+				</div>
+				<div id="collapse1Three" class="accordion-body collapse">
+					<div class="panel-body">
+						<%= yield :documents %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
                 </div>
                 <div class="col-md-3 hidden-xs hidden-sm">
                     <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>

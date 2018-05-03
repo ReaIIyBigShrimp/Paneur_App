@@ -2,8 +2,11 @@ class PeopleController < ApplicationController
     layout 'person'
 
     def show
-        #render('person')
+        # Get single person from database using personID
         @person = Person.find(params[:id])
+
+        @related_people = @person.people
+        
         render('show')
     end
 end
