@@ -54,7 +54,9 @@
                         <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
                             <span class="caret"></span>
                         </a>
+                        <!-- Loop to create the dropdown menu items -->
                         <ul class="dropdown-menu">
+                            <!-- Ordered by name -->
                             <% Country.all.order(:Name).each do |country| %>
                                 <li class="botsubmenu">
                                     <%= link_to country.Name, country  %>
