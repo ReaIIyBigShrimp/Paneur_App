@@ -1,5 +1,6 @@
 class Person < ApplicationRecord
     self.table_name = "People"
+
     validates_presence_of :DateOfBirth, :DateOfBirth, :Name, :Surname
     
     # Nationalities
@@ -28,5 +29,9 @@ class Person < ApplicationRecord
                 AND r2.\"PersonId\" = #{self.Id}
             WHERE r1.\"PersonId\" IS NOT NULL OR r2.\"PersonId\" IS NOT NULL;"
         )
+    end
+    
+    def get_full_name
+        return self.Name + " " + self.Surname
     end
 end

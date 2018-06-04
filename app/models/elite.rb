@@ -12,5 +12,5 @@ class Elite < ApplicationRecord
     
     # People Elites
     has_many :people_elites  , foreign_key: :EliteId, class_name: "PeopleElite"
-
+    
 end

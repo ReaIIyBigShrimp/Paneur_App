@@ -31,72 +31,20 @@
 	<div class="fascia" id="archival" style="padding-top:10px; padding-bottom:10px;">
 		<h4 class="panel-title" style="text-align:right; font-size:22px; padding-right:10px;">Archival sources</h4>
 	</div>
-	<p style="padding-top:25px;"></p>
+		<p style="padding-top:25px;"></p>
 	<!-- Add the image tags in here. Remove other anchor tags. -->
 	<!--<div class="row rowmega" id="archival"><div class="titolomega hidden-xs hidden-sm col-md-8" id="#archival">&nbsp;</div><div class="titolomega2 col-md-4">Archival sources</div></div>-->
 	<ul class="nav nav-list mb-xl">
+	<% @documents.each do |file| %>
+		<li class="documenti">
+			<a href="doc/nomedocumento.pdf" target="_blank"><%= file.ArchivalCode + " | " + file.Name %></a>
+		</li>
+	<% end %>
+		<!--
 		<li class="documenti">
 			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-			</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-			</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li>
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Economic Policy Department and Committee of the HSWP (M-KS 288. f. 15. cs.);</a>
-		</li>
+		</li> 
+		-->
 	</ul>
 
 

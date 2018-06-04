@@ -6,8 +6,13 @@ class CountriesController < ApplicationController
         
         @country = Country.find(params[:id])
         # Load view after assigning the variable
-        render('show')
         
+        # Documents for country
+        @documents = @country.get_documents
+
+        # Render view for country.
+        # Declare instance variables first.
+        render('show')
         # Test
         #@country = Country.find(1)
     end

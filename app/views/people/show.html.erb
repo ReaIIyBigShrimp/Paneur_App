@@ -31,8 +31,8 @@
                 <tr>
                     <td width="90%">
                         <div class="contactname">
-                            <a href="person.html"><%= related_person.Name %></a>
-                            
+                            <!-- <a href="person.html"><%= related_person.Name %></a> -->
+                            <%= link_to related_person.get_full_name , '/people/' + related_person.id.to_s %>
                         </div>
                         <div class="contactdesc"><%= related_person.Description %></div>
                     </td>
