@@ -1,0 +1,23 @@
+<aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>
+    <div class="nomepaese">
+        <%= yield :name %>
+    </div>
+    <%= image_tag("Hungary.png", class: 'country-img')%>
+        <div class="titolo">
+            <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
+        </div>
+        <ul class="nav nav-list mb-xl show-bg-active">
+            <li>
+                <div id="subli" style="padding-top:10px;">
+                    <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+                </div>
+            </li>
+        </ul>
+        <div class="titolobn">
+            <span>Elite groups</span>
+        </div>
+        <ul class="nav nav-list mb-xl show-bg-active2">
+            <%= yield :elite_groups %>
+        </ul>
+</aside>
+</div>

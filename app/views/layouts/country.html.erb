@@ -32,17 +32,19 @@
         <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
 
         </header>
-
+        <section class="page-header">
         <div role="main" class="main">
 
-            <section class="page-header">
+            
                 <div class="hidden-xs hidden-sm container">
                     <div class="row">
                         <div class="col-md-6">
                             <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
-                                <!-- >
-                <img src="img/dep.svg" align="left" height="70px">
-                -->
+                            <!-- >
+                            <img src="img/dep.svg" align="left" height="70px">
+                            --><!-- >
+                            <img src="img/dep.svg" align="left" height="70px">
+                            -->
                         </div>
                         <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
                             <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
@@ -58,150 +60,28 @@
         </div>
         </section>
 
-        <span class="visible-xs visible-sm">
-            <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <span class="navbar-brand topmenu"><%= @country.Name %></span>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartop">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbartop">
+        <!-- Top navigation bar -->
+        <!-- Responsive. Displays only narrow screen width only -->
+        <%= render "layouts/shared/xs_sm_country_nav"%>
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="topmenu">
-                                <a data-hash data-hash-offset="30" href="#overview">Overview</a>
-                            </li>
-                            <li class="topmenu">
-                                <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-                            </li>
-                            <li class="dropdown topmenu">
-                                <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="topsubmenured">
-                                        <a href="elitegroups.html">Main page</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Party</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Government</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Central Bank</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Trade Organisations</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Academia</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </span>
-        <!-- FINE NAVIGAZIONE FISSA TOP (RESPONSIVE) -->
-
-
-
-        <!-- NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
-        <nav class="navbar navbar-inverse navbar-fixed-bottom navbar-right  botmenutrasparente">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li class="botmenu">
-                            <a href="about.html">ABOUT THIS MAP</a>
-                        </li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="botmenu">
-                            <!-- <a href="index.html">Main map</a> -->
-                            <%= link_to 'Main Map', '/'%>
-                        </li>
-                        <li class="dropdown botmenu">
-                            <a class="dropdown-toggle active" data-toggle="dropdown" href="#">Countries
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <% Country.all.order(:Name).each do |country| %>
-                                    <li class="botsubmenu">
-                                        <%= link_to country.Name, country  %>
-                                    </li>
-                                <% end %>
-                            </ul>
-                        </li>
-                        <li class="botmenu">
-                            <a href="comecon.html">Comecon</a>
-                        </li>
-                        <li class="botmenu">
-                            <%= link_to('PanEur1970s website', 'https://paneur1970s.eui.eu/')%>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <%= render "layouts/shared/bottom_nav" %>
 
         <!-- FINE NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->
         <!-- Start of yield -->
         <div class="container">
 
             <div class="row">
-
                 <div class="col-md-9">
                     <%= yield :content %>
                 </div>
                 <div class="col-md-3 hidden-xs hidden-sm">
-                    <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>
-
-                        <div class="nomepaese"><%= yield :name %></div>
-                        <%= image_tag("Hungary.png", class: 'country-img')%>
-                        <div class="titolo">
-                            <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
-                        </div>
-                        <ul class="nav nav-list mb-xl show-bg-active">
-
-
-                            <li>
-                                <div id="subli" style="padding-top:10px;">
-                                    <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-
-                                    <div id="spazio"></div>
-                            </li>
-
-                        </ul>
-
-
-                        <div class="titolobn">
-                            <span>Elite groups</span>
-                        </div>
-                        <ul class="nav nav-list mb-xl show-bg-active2">
-                            <%= yield :elite_groups %>
-                        </ul>
-
-
-                    </aside>
-                    </div>
-
+                    <%= render "layouts/shared/country_nav" %>
                 </div>
                 <div style="padding-top:50px;"></div>
             </div>
         </div>
+        <%= render "layouts/shared/footer" %>
+    </div>
 </body>
 
 </html>

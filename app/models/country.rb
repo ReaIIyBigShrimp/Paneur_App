@@ -8,11 +8,10 @@ class Country < ApplicationRecord
     def get_elites
         return Elite.where({CountryId: self.Id})
     end
-    # get documents for country through associated elites for that country
+    # returns documents for country through associated elites for that country.
     def get_documents
         # Array for all documents
         documents = []
-
         # Elites for country
         elites = Elite.where({CountryId: self.Id})
         # elites pushes to array

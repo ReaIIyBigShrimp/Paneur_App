@@ -1,0 +1,46 @@
+<span class="visible-xs visible-sm">
+    <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand topmenu">
+                    <%= @country.Name %>
+                </span>
+                <!-- Toggle menu icon -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartop">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbartop">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="topmenu">
+                        <a data-hash data-hash-offset="30" href="#overview">Overview</a>
+                    </li>
+                    <li class="topmenu">
+                        <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+                    </li>
+                    <li class="dropdown topmenu">
+                        <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
+                            <span class="caret"></span>
+                        </a>
+                        
+                        <ul class="dropdown-menu">
+                            <li class="topsubmenured">
+                                <a href="elitegroups.html">Main page</a>
+                            </li>
+                            <!-- Replicated. Need to change.-->
+                            <% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
+                            <% grouped_elites.each do |type, elite| %>
+                                <li class="topsubmenu">
+                                    <%= link_to type, elite %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</span>

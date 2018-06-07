@@ -11,6 +11,15 @@
 	<% end %>
 <% end %>
 
+<% content_for :elite_groups_top do %>
+	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
+	<% grouped_elites.each do |type, elite| %>
+		<li class="topsubmenu">
+			<%= link_to type, elite %>
+		</li>
+	<% end %>
+<% end %>
+
 <% content_for :content do  %>
 
 	<div class="row rowmega" id="overview">
@@ -38,6 +47,11 @@
 	<% @documents.each do |file| %>
 		<li class="documenti">
 			<a href="doc/nomedocumento.pdf" target="_blank"><%= file.ArchivalCode + " | " + file.Name %></a>
+		</li>
+	<% end %>
+	<% if @documents.count == 0 %>
+		<li class="documenti">
+			<p style="padding-left: 15px;">No documents for country</p>
 		</li>
 	<% end %>
 		<!--

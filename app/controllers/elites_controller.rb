@@ -4,7 +4,7 @@ class ElitesController < ApplicationController
 
     def show
         
-        @country = Elite.find(params[:id])
+        @elite = Elite.find(params[:id])
         # Load view after assigning the variable
         render('show')
         
