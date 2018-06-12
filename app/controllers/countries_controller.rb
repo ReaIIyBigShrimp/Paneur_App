@@ -16,4 +16,5 @@ class CountriesController < ApplicationController
         # Test
         #@country = Country.find(1)
     end
+
 end

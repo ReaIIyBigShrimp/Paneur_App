@@ -14,7 +14,7 @@
             </li>
         </ul>
         <div class="titolobn">
-            <span>Elite groups</span>
+            <%= link_to("Elite Groups", elites_path(:country_id => @country.id)) %>
         </div>
         <ul class="nav nav-list mb-xl show-bg-active2">
             <%= yield :elite_groups %>

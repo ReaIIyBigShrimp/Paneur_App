@@ -1,0 +1,101 @@
+<% content_for :title do %>
+    <%= @elite.Name %>
+<% end %>
+
+<% content_for :content do %>
+    <div class="row rowmega" id="overview">
+        <div class="titolomega col-md-8 col-sd-8 hidden-sm hidden-xs">&nbsp;</div>
+        <div class="titolomega2 hidden-xs hidden-sm col-md-4 col-sd-4"><%= @elite.Name %></div>
+    </div>
+    <div class="col-md-12">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle " data-panel="0" data-toggle="collapse" data-parent="#accordion" href="#collapse1One">
+                            Intro
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1One" class="accordion-body collapse in">
+                    <div class="panel-body">
+                        <p>The leading monthly of Hungarian economics, Közgazdasági Szemle [Review of Economics] reported accurately
+                            the advances of the EEC’s enlargement (Great Britain, Ireland, Denmark), however, these articles
+                            stressed that Brussels had no concept how to cooperate with the Socialist countries. In the second
+                            half of the 1970s the perception of the Western integration was rather positive among economists:
+                            the encouraged inner mobility, the development of declining areas, the technological and structural
+                            adjustment was depicted as features of a successful adaptation through the deepening integration.
+                            Külgazdaság [Foreign Economy], the journal of the Institute of Prosperity and Market Research, presented
+                            several Western examples of effective economic adjustment. In the first years of the 1980s the Hungarian
+                            freedom of action and re-evaluation of the Western relations were the most significant topics in
+                            these journals.</p>
+
+                        <p>In the columns of Külgazdaság the “optimal openness” of Hungary was tackled in 1981. Zoltán Krasznai
+                            and Gábor Oblath argued that Hungary was at the crossroads – it could open and catch up or else closing
+                            and drifting to periphery. In the following years the criticism of the ineffective Comecon cooperation
+                            escalated, the stagnation of the Eastern trade, the technological backwardness, and the lack of sources
+                            were more outspokenly pictured. Economists also were very sceptical of Gorbachev’s new initiatives
+                            to revitalize cooperation within Comecon and create an Eastern Common Market. According to András
+                            Köves, a single market could “come into being merely among market economies”.</p>
+                    </div>
+                </div>
+            </div>
+            <div id "accordion0" class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
+                            Documents
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1Two" class="accordion-body collapse">
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <tbody>
+                            
+                                <tr>
+                                    <td width="90%">
+                                        <div class="doctitle">
+                                            <a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
+                                        </div>
+                                        <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                            ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
+                                    </td>
+                                    <td>
+                                        <a href="doc/nomedocumento.pdf" target="_blank">
+                                            <img src="img/pdf_doc.png" width="100%">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
+                            People
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse1Three" class="accordion-body collapse in">
+                    <div class="panel-body">
+                        <div class="owl-carousel owl-theme stage-margin" style="overflow: hidden;" data-plugin-options='{"items": 4, "margin": 30, "loop": false, "nav": true, "dots": false, "stagePadding": 40}'>
+                            <div>
+                                <%= image_tag("person.jpg", class: "img-responsive") %>
+                                <div class="personcarousel">
+                                    <a href="person.html">Nome Cognome 1</a>
+                                    <!-- Get person for elite group -->
+                                    <!-- Loop over array of people. Then output single elements for one. -->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>

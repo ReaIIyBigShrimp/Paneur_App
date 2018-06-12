@@ -1,4 +1,4 @@
-<% content_for :name do %>
+<% content_for :title do %>
 	<%= @country.Name %>
 <% end %>
 
@@ -15,7 +15,9 @@
 	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
 	<% grouped_elites.each do |type, elite| %>
 		<li class="topsubmenu">
-			<%= link_to type, elite %>
+			<!-- <%= link_to type, elite %> -->
+			<!-- Elite for country - single element -->
+			<%= link_to(elite.Name, ) %>
 		</li>
 	<% end %>
 <% end %>
@@ -44,6 +46,7 @@
 	<!-- Add the image tags in here. Remove other anchor tags. -->
 	<!--<div class="row rowmega" id="archival"><div class="titolomega hidden-xs hidden-sm col-md-8" id="#archival">&nbsp;</div><div class="titolomega2 col-md-4">Archival sources</div></div>-->
 	<ul class="nav nav-list mb-xl">
+	<!-- Change link location. Currently, no file is linked -->
 	<% @documents.each do |file| %>
 		<li class="documenti">
 			<a href="doc/nomedocumento.pdf" target="_blank"><%= file.ArchivalCode + " | " + file.Name %></a>
