@@ -6,10 +6,7 @@ class ElitesController < ApplicationController
     
     before_action :find_country
     
-    def find_country
-        # Find country for elite  
-       @country = Country.find(params[:country_id])   
-    end 
+    
 
     def index
         @elites = @country.elites
@@ -17,12 +14,24 @@ class ElitesController < ApplicationController
         render ('index')
     end
     def show
-        @country = Country.first
-        @elite = Elite.find(params[:id])
+        respond_to do |format|
+            format.html {
+                @country = Country.first
+                @elite = Elite.find(params[:id])
+            }
+        end
+
+
         # Load view after assigning the variable
-        render('show')
         
         # Test
         #@country = Country.find(1)
     end
+
+    private 
+
+    def find_country
+        # Find country for elite  
+       @country = Country.find(params[:country_id])   
+    end 
 end

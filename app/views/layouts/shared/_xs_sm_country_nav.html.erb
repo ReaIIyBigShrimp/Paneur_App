@@ -28,7 +28,7 @@
                         
                         <ul class="dropdown-menu">
                             <li class="topsubmenured">
-                                <a href="elitegroups.html">Main page</a>
+                                <%= link_to "Main page", country_elites_path(:country_id => @country.id) %>
                             </li>
                                                         
                             <%= yield :elite_groups_top %>

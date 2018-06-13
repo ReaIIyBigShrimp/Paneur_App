@@ -6,7 +6,7 @@
 	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
 	<% grouped_elites.each do |type, elite| %>
 		<li>
-			<%= link_to type, elite %>
+			<%= link_to elite.Name, country_elite_path(:country_id => @country.id, :id => elite.id) %>
 		</li>
 	<% end %>
 <% end %>
@@ -17,7 +17,7 @@
 		<li class="topsubmenu">
 			<!-- <%= link_to type, elite %> -->
 			<!-- Elite for country - single element -->
-			<%= link_to(elite.Name, ) %>
+			<%= link_to(elite.Name, country_elite_path(@country, elite)) %>
 		</li>
 	<% end %>
 <% end %>

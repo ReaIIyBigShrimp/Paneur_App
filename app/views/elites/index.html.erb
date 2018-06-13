@@ -7,82 +7,31 @@
                     <div class="titolomega2 hidden-xs col-md-4 hidden-sm">Elite groups</div>
                 </div>
                 <div class="hidden-xs">
-                    <a href="group.html">
-                        <div class="group">
-                            <table width="100%">
-                                <tr>
-                                    <td width="200">
-                                        <img src="img/groupimg.jpg" width="200">
-                                    </td>
-                                    <td class="cella">
-                                        <div class="titologroup">Party</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-                    <a href="group.html">
-                        <div class="group">
-                            <table width="100%">
-                                <tr>
-                                    <td width="200">
-                                        <img src="img/groupimg.jpg" width="200">
-                                    </td>
-                                    <td class="cella">
-                                        <div class="titologroup">Government</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-                    <a href="group.html">
-                        <div class="group">
-                            <table width="100%">
-                                <tr>
-                                    <td width="200">
-                                        <img src="img/groupimg.jpg" width="200">
-                                    </td>
-                                    <td class="cella">
-                                        <div class="titologroup">Central bank</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-                    <a href="group.html">
-                        <div class="group">
-                            <table width="100%">
-                                <tr>
-                                    <td width="200">
-                                        <img src="img/groupimg.jpg" width="200">
-                                    </td>
-                                    <td class="cella">
-                                        <div class="titologroup">Trade organisations</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
-                    <a href="group.html">
-                        <div class="group">
-                            <table width="100%">
-                                <tr>
-                                    <td width="200">
-                                        <img src="img/groupimg.jpg" width="200">
-                                    </td>
-                                    <td class="cella">
-                                        <div class="titologroup">Academia</div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </a>
+                    <% @elites.each do |elite| %>
+                        <%= link_to country_elite_path(:country_id => @country.id, :id => elite.id) do %>
+                            <div class="group">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="200">
+                                            
+                                            <%= image_tag('groupimg.jpg', width: "200")%>
+                                        </td>
+                                        <td class="cella">
+                                            <div class="titologroup"><%= elite.Name %></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <% end %>
+                    <% end %>
+                    
                 </div>
 
             </div>
 
             <div class="row hidden-lg hidden-sm hidden-md">
                 <div style="col-md-12">
+
                     <a href="group.html">
                         <span class="thumb-info">
                             <span class="thumb-info-wrapper">
