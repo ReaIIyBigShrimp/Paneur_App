@@ -13,7 +13,6 @@
                                 <table width="100%">
                                     <tr>
                                         <td width="200">
-                                            
                                             <%= image_tag('groupimg.jpg', width: "200")%>
                                         </td>
                                         <td class="cella">
@@ -24,108 +23,25 @@
                             </div>
                         <% end %>
                     <% end %>
-                    
                 </div>
-
             </div>
-
+            <!-- 766px or smaller width -->
             <div class="row hidden-lg hidden-sm hidden-md">
                 <div style="col-md-12">
-
-                    <a href="group.html">
-                        <span class="thumb-info">
-                            <span class="thumb-info-wrapper">
-                                <img src="img/groupimg.jpg" class="img-responsive" alt="">
-                                <span class="thumb-info-title">
-                                    <span class="thumb-info-inner">Party</span>
-                                    <!--<span class="thumb-info-type">Project Type</span>-->
+                    <% @elites.each do |elite| %>
+                        <%= link_to country_elite_path(:country_id => @country.id, :id => elite.id) do %>
+                            <span class="thumb-info">
+                                <span class="thumb-info-wrapper">
+                                    <%= image_tag("groupimg.jpg", class: "img-responsive", alt: "") %>
+                                    <span class="thumb-info-title">
+                                        <span class="thumb-info-inner"> <%= elite.Name %></span>
+                                    </span>
                                 </span>
-                                <!--<span class="thumb-info-action">
-                                                        <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                                    </span>-->
                             </span>
-                        </span>
-                    </a>
+                        <% end %>
+                    <% end %>
                 </div>
-                <br/>
-
-                <div style="col-md-12">
-                    <a href="group.html">
-                        <span class="thumb-info">
-                            <span class="thumb-info-wrapper">
-                                <img src="img/groupimg.jpg" class="img-responsive" alt="">
-                                <span class="thumb-info-title">
-                                    <span class="thumb-info-inner">Government</span>
-                                    <!--<span class="thumb-info-type">Project Type</span>-->
-                                </span>
-                                <!--<span class="thumb-info-action">
-                                                        <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                                    </span>-->
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <br/>
-
-                <div style="col-md-12">
-                    <a href="group.html">
-                        <span class="thumb-info">
-                            <span class="thumb-info-wrapper">
-                                <img src="img/groupimg.jpg" class="img-responsive" alt="">
-                                <span class="thumb-info-title">
-                                    <span class="thumb-info-inner">Central bank</span>
-                                    <!--<span class="thumb-info-type">Project Type</span>-->
-                                </span>
-                                <!--<span class="thumb-info-action">
-                                                        <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                                    </span>-->
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <br/>
-
-                <div style="col-md-12">
-                    <a href="group.html">
-                        <span class="thumb-info">
-                            <span class="thumb-info-wrapper">
-                                <img src="img/groupimg.jpg" class="img-responsive" alt="">
-                                <span class="thumb-info-title">
-                                    <span class="thumb-info-inner">Trade organisation</span>
-                                    <!--<span class="thumb-info-type">Project Type</span>-->
-                                </span>
-                                <!--<span class="thumb-info-action">
-                                                        <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                                    </span>-->
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <br/>
-
-                <div style="col-md-12">
-                    <a href="group.html">
-                        <span class="thumb-info">
-                            <span class="thumb-info-wrapper">
-                                <img src="img/groupimg.jpg" class="img-responsive" alt="">
-                                <span class="thumb-info-title">
-                                    <span class="thumb-info-inner">Academia</span>
-                                    <!--<span class="thumb-info-type">Project Type</span>-->
-                                </span>
-                                <!--<span class="thumb-info-action">
-                                                        <span class="thumb-info-action-icon"><i class="fa fa-link"></i></span>
-                                                    </span>-->
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <br/>
-
-
-
-            </div>
-
-            
+            </div>          
         </div>
         <div style="padding-top:50px;"></div>
     </div>

@@ -19,24 +19,7 @@
                 </div>
                 <div id="collapse1One" class="accordion-body collapse in">
                     <div class="panel-body">
-                        <p>The leading monthly of Hungarian economics, Közgazdasági Szemle [Review of Economics] reported accurately
-                            the advances of the EEC’s enlargement (Great Britain, Ireland, Denmark), however, these articles
-                            stressed that Brussels had no concept how to cooperate with the Socialist countries. In the second
-                            half of the 1970s the perception of the Western integration was rather positive among economists:
-                            the encouraged inner mobility, the development of declining areas, the technological and structural
-                            adjustment was depicted as features of a successful adaptation through the deepening integration.
-                            Külgazdaság [Foreign Economy], the journal of the Institute of Prosperity and Market Research, presented
-                            several Western examples of effective economic adjustment. In the first years of the 1980s the Hungarian
-                            freedom of action and re-evaluation of the Western relations were the most significant topics in
-                            these journals.</p>
-
-                        <p>In the columns of Külgazdaság the “optimal openness” of Hungary was tackled in 1981. Zoltán Krasznai
-                            and Gábor Oblath argued that Hungary was at the crossroads – it could open and catch up or else closing
-                            and drifting to periphery. In the following years the criticism of the ineffective Comecon cooperation
-                            escalated, the stagnation of the Eastern trade, the technological backwardness, and the lack of sources
-                            were more outspokenly pictured. Economists also were very sceptical of Gorbachev’s new initiatives
-                            to revitalize cooperation within Comecon and create an Eastern Common Market. According to András
-                            Köves, a single market could “come into being merely among market economies”.</p>
+                        <p><%= @elite.Description %></p>
                     </div>
                 </div>
             </div>
@@ -52,21 +35,21 @@
                     <div class="panel-body">
                         <table class="table table-striped">
                             <tbody>
-                            
-                                <tr>
-                                    <td width="90%">
-                                        <div class="doctitle">
-                                            <a href="doc/nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                                        </div>
-                                        <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                            ut labore et dolore magna aliqua. Ut enim ad minim veniam.</div>
-                                    </td>
-                                    <td>
-                                        <a href="doc/nomedocumento.pdf" target="_blank">
-                                            <img src="img/pdf_doc.png" width="100%">
-                                        </a>
-                                    </td>
-                                </tr>
+                                <% @elite.files.each do |file| %>
+                                    <tr>
+                                        <td width="90%">
+                                            <div class="doctitle">
+                                                <%= link_to(file.Name, country_elite_path(@country, @elite)) %>
+                                            </div>
+                                            <div class="docdesc"><%= @elite.Description %></div>
+                                        </td>
+                                        <td>
+                                            <a href="doc/nomedocumento.pdf" target="_blank">
+                                                <%= image_tag("pdf_doc.png") %>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <% end %>
                             </tbody>
                         </table>
                     </div>
@@ -87,9 +70,9 @@
                                 <%= image_tag("person.jpg", class: "img-responsive") %>
                                 <div class="personcarousel">
                                     <a href="person.html">Nome Cognome 1</a>
+                                    <%= link_to(@elite.people) %>
                                     <!-- Get person for elite group -->
                                     <!-- Loop over array of people. Then output single elements for one. -->
-                                    
                                 </div>
                             </div>
                         </div>

@@ -9,22 +9,7 @@ class Country < ApplicationRecord
 
     # returns documents for country through associated elites for that country.
     def get_documents
-        documents = []
-        # Elites for country
-        # elites pushes to array
-        Elite.where(CountryId: self.Id).each do |e|
-            e.files.each{ |f| documents.push(f) } # Files for each elite
-        end
-        # return documents
         return Elite.where(CountryId: self.Id).map(&:files).flatten
-        return Elite.where(CountryId: self.Id).map{|e| e.files}.flatten
     end
     
-    def test
-        files = self.get_documents()
-        
-        files.each do |thing|
-            puts thing.ArchivalCode
-        end
-    end
 end
