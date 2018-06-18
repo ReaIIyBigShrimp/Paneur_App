@@ -41,7 +41,7 @@
                                             <div class="doctitle">
                                                 <%= link_to(file.Name, country_elite_path(@country, @elite)) %>
                                             </div>
-                                            <div class="docdesc"><%= @elite.Description %></div>
+                                            <div class="docdesc"><%= truncate(@elite.Description, :length => 200) %></div>
                                         </td>
                                         <td>
                                             <a href="doc/nomedocumento.pdf" target="_blank">
@@ -70,9 +70,7 @@
                                 <%= image_tag("person.jpg", class: "img-responsive") %>
                                 <div class="personcarousel">
                                     <a href="person.html">Nome Cognome 1</a>
-                                    <%= link_to(@elite.people) %>
-                                    <!-- Get person for elite group -->
-                                    <!-- Loop over array of people. Then output single elements for one. -->
+                                    <%= link_to(@elite.people_elites) %>
                                 </div>
                             </div>
                         </div>
