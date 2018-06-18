@@ -1,11 +1,14 @@
-@import "theme";
-@import "theme-elements";
-@import "theme-animate";
-@import "ie";
-@import "jquery.easy-pie-chart";
-@import "owl.carousel";
-@import "owl.theme";
-@import "magnific-popup";
+/*
+*= require theme
+*= require theme-elements
+*= require theme-animate
+*= require ie
+*= require jquery.easy-pie-chart
+*= require magnific-popup
+*= require owl.carousel
+*= require owl.theme
+*/
 
+@import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";

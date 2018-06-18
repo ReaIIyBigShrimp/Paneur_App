@@ -105,8 +105,7 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1-x64-mingw32)
       mini_portile2 (~> 2.3.0)
-    owlcarousel-rails (1.1.3.3)
-      jquery-rails
+    owlcarousel-rails (2.2.3.5)
     pg (0.21.0-x64-mingw32)
     popper_js (1.12.9)
     public_suffix (3.0.1)
@@ -211,7 +210,7 @@ DEPENDENCIES
   jquery-ui-rails (~> 5.0, >= 5.0.5)
   jquery-validation-rails (~> 1.16)
   magnific-popup-rails (~> 1.1)
-  owlcarousel-rails (~> 1.1, >= 1.1.3.3)
+  owlcarousel-rails (~> 2.0)
   pg (~> 0.18)
   popper_js
   puma (~> 3.7)

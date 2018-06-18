@@ -9,6 +9,7 @@
     </div>
     <div class="col-md-12">
         <div class="panel-group" id="accordion">
+            <!-- Intro panel -->
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -23,6 +24,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Documents -->
             <div id "accordion0" class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -55,6 +57,8 @@
                     </div>
                 </div>
             </div>
+            <!-- People -->
+            
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -66,13 +70,34 @@
                 <div id="collapse1Three" class="accordion-body collapse in">
                     <div class="panel-body">
                         <div class="owl-carousel owl-theme stage-margin" style="overflow: hidden;" data-plugin-options='{"items": 4, "margin": 30, "loop": false, "nav": true, "dots": false, "stagePadding": 40}'>
+                            <% @elite.people_elites.each do |elite_person| %>
+                                <% person = Person.find(elite_person.PersonId) %>
+                                <!-- Ouput person link -->
+                                <div>
+                                    <%= image_tag("person.jpg", class: "img-responsive", alt: person.get_full_name) %>
+                                    <div class="personcarousel">
+                                        <%= link_to( person.get_full_name, person_path(:id => elite_person.PersonId) ) %>
+                                    </div>
+                                </div>
+                            <% end %>
                             <div>
-                                <%= image_tag("person.jpg", class: "img-responsive") %>
+                                <%= image_tag("person.jpg", class: "img-responsive", alt: Person.first.get_full_name) %>
                                 <div class="personcarousel">
-                                    <a href="person.html">Nome Cognome 1</a>
-                                    <%= link_to(@elite.people_elites) %>
+                                    <%= link_to( Person.first.get_full_name, person_path(:id => Elite.first.people_elites.first.PersonId) ) %>
                                 </div>
                             </div>
+                            <div>
+                                <%= image_tag("person.jpg", class: "img-responsive", alt: Person.first.get_full_name) %>
+                                <div class="personcarousel">
+                                    <%= link_to( Person.first.get_full_name, person_path(:id => Elite.first.people_elites.first.PersonId) ) %>
+                                </div>
+                            </div>
+                            <div>
+                                <%= image_tag("person.jpg", class: "img-responsive", alt: Person.first.get_full_name) %>
+                                <div class="personcarousel">
+                                    <%= link_to( Person.first.get_full_name, person_path(:id => Elite.first.people_elites.first.PersonId) ) %>
+                                </div>
+                            </div>                        
                         </div>
                     </div>
                 </div>

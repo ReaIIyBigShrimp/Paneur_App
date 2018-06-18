@@ -40,7 +40,7 @@ gem "autoprefixer-rails"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'simple-line-icons-rails', '~> 0.1.3'
-gem 'owlcarousel-rails', '~> 1.1', '>= 1.1.3.3'
+gem 'owlcarousel-rails', '~> 2.0'
 gem 'magnific-popup-rails', '~> 1.1'
 
 # jquery appear - No gem
