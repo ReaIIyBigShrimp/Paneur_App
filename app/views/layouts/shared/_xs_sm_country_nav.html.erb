@@ -16,10 +16,10 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class="topmenu">
-                        <a data-hash data-hash-offset="30" href="#overview">Overview</a>
+                        <%= link_to("Overview", country_path(@country, :anchor => "Overview")) %>
                     </li>
                     <li class="topmenu">
-                        <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+                        <%= link_to("Archival Sources", country_path(@country, :anchor => "Archival Sources")) %>
                     </li>
                     <li class="dropdown topmenu">
                         <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
