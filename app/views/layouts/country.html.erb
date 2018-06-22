@@ -32,34 +32,35 @@
         <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
         </header>
         <section class="page-header">
-        <div role="main" class="main">
-            <div class="hidden-xs hidden-sm container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
-                        <!-- >
-                        <img src="img/dep.svg" align="left" height="70px">
-                        --><!-- >
-                        <img src="img/dep.svg" align="left" height="70px">
-                        -->
-                    </div>
-                    <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
-                        <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
-                            <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
-                            This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
-                            innovation programme
-                            <br/> (Grant Agreement n. 669194)
-                            <!-- Large button group -->
+            <div role="main" class="main">
+                <div class="hidden-xs hidden-sm container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
+                            <!-- >
+                            <img src="img/dep.svg" align="left" height="70px">
+                            --><!-- >
+                            <img src="img/dep.svg" align="left" height="70px">
+                            -->
+                        </div>
+                        <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
+                            <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
+                                <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
+                                This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
+                                innovation programme
+                                <br/> (Grant Agreement n. 669194)
+                                <!-- Large button group -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
 
         <!-- Top navigation bar -->
         <!-- Responsive. Displays only narrow screen width only -->
         <%= render "layouts/shared/xs_sm_country_nav"%>
 
+        <!-- Bottom navigation bar -->
         <%= render "layouts/shared/bottom_nav" %>
 
         <!-- FINE NAVIGAZIONE FISSA FOOTER (RESPONSIVE) -->

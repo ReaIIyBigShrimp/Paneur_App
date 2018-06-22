@@ -8,17 +8,10 @@ class ElitesController < ApplicationController
 
     def index
         @elites = @country.elites
-        #@country = Country.first
-        render ('index')
     end
 
     def show
         @elite = Elite.find(params[:id])
-        respond_to do |format|
-            format.html {
-                #@country = Country.first
-            }
-        end
     end
 
     private 
