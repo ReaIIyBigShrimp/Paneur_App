@@ -4,17 +4,18 @@
     </div>
     <%= image_tag("Hungary.png", class: 'country-img')%>
         <div class="titolo">
-            <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
+            <%= link_to("Overview", country_path(@country, :anchor => "overview"), :class => "country-nav-header") %>
         </div>
         <ul class="nav nav-list mb-xl show-bg-active">
             <li>
                 <div id="subli" style="padding-top:10px;">
-                    <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
+                    <!-- <a data-hash data-hash-offset="30" href="#archival">Archival sources</a> -->
+                    <%= link_to("Archival Sources", country_path(@country, :anchor => "archival")) %>
                 </div>
             </li>
-        </ul>
+        </ul>  
         <div class="titolobn">
-            <%= link_to("Elite Groups", country_elites_path(@country)) %>
+            <%= link_to("Elite Groups", country_elites_path(@country), :class => "country-nav-header") %>
         </div>
         <ul class="nav nav-list mb-xl show-bg-active2">
             <%= yield :elite_groups %>
