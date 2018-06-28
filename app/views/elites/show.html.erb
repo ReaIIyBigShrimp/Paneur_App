@@ -41,7 +41,8 @@
                                     <tr>
                                         <td width="90%">
                                             <div class="doctitle">
-                                                <%= link_to(file.Name, country_elite_path(@country, @elite)) %>
+                                                <%= link_to file.Name , "/public/#{file.FileName}" %>
+                                                <!-- <%= link_to(file.Name, country_elite_path(@country, @elite)) %> -->
                                             </div>
                                             <div class="docdesc"><%= truncate(@elite.Description, :length => 200) %></div>
                                         </td>

@@ -1,11 +1,3 @@
-<!--
-<h1>Paneur#map</h1>
-<p>Find me in app/views/paneur/map.html.erb</p>
--->
-<!-- Navigation -->
-
-<!-- End of Navigation-->
-<!-- Insert the map here -->
 <div class="body">
   <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
 
@@ -18,17 +10,13 @@
         <div class="row">
           <div class="col-md-6">
             <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
-              <!-- >
-                <img src="img/dep.svg" align="left" height="70px">
-                -->
           </div>
           <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
             <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
-              <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
               This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
               innovation programme
               <br/> (Grant Agreement n. 669194)
-              <!-- Large button group -->
+              
           </div>
         </div>
       </div>
@@ -39,12 +27,6 @@
   <div class="container" style="padding-top:-100px;">
 
     <div class="row" style="padding-top:-100px;">
-
-      <!--<div class="col-md-12"> <!-- Large button group -->
-      <!--<h3>Map title</h3></div>-->
-
-
-
       <div class="col-md-12">
         <script type="text/javascript">
           function calcHeight() {
@@ -62,20 +44,4 @@
       </div>
     </div>
   </div>
-  <footer id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-md-12">
-					<div>
-
-						<p>&copy; copyright info</p>
-
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</footer>
-
-  
+  <%= render "layouts/shared/footer" %>
