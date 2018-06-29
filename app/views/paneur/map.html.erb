@@ -1,28 +1,5 @@
 <div class="body">
-  <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
-
-  </header>
-
-  <div role="main" class="main">
-
-    <section class="page-header">
-      <div class="hidden-xs hidden-sm container">
-        <div class="row">
-          <div class="col-md-6">
-            <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
-          </div>
-          <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
-            <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
-              This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
-              innovation programme
-              <br/> (Grant Agreement n. 669194)
-              
-          </div>
-        </div>
-      </div>
-
-  </div>
-  </section>
+  <%= render "layouts/shared/info_header" %>
 
   <div class="container" style="padding-top:-100px;">
 
@@ -44,4 +21,5 @@
       </div>
     </div>
   </div>
+
   <%= render "layouts/shared/footer" %>

@@ -1,6 +1,2 @@
-elites = Elite.all
+Elite.all.each { |e| e.Name = "Elite Group"; e.save! }
 
-elites.all.each do |e|
-    e.Name = "Additional Elite Group"
-    e.save!
-end
