@@ -41,15 +41,14 @@
                                     <tr>
                                         <td width="90%">
                                             <div class="doctitle">
-                                                <%= link_to file.Name , "/public/#{file.FileName}" %>
-                                                <!-- <%= link_to(file.Name, country_elite_path(@country, @elite)) %> -->
+                                                <%= link_to file.Name, "/files/#{file.FileName}" %>
                                             </div>
                                             <div class="docdesc"><%= truncate(@elite.Description, :length => 200) %></div>
                                         </td>
                                         <td>
-                                            <a href="doc/nomedocumento.pdf" target="_blank">
+                                            <%= link_to do %>
                                                 <%= image_tag("pdf_doc.png") %>
-                                            </a>
+                                            <% end %>
                                         </td>
                                     </tr>
                                 <% end %>

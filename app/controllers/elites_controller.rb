@@ -4,7 +4,7 @@ class ElitesController < ApplicationController
     layout "country"
     # Find country for elite
     
-    before_action :find_country
+    before_action :find_country, except: :download_pdf
 
     def index
         @elites = @country.elites
@@ -12,6 +12,15 @@ class ElitesController < ApplicationController
 
     def show
         @elite = Elite.find(params[:id])
+    end
+    
+    # Download file from public folder
+    def download_pdf()
+        send_file(
+          "#{Rails.root}/public/DOC 0001 DSC06246.pdf",
+          filename: "DOC 0001 DSC06246",
+          type: "application/pdf"
+        )
     end
 
     private 
