@@ -1,2 +1,0 @@
-module PaneurHelper
-end
