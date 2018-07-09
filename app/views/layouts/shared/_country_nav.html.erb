@@ -3,22 +3,26 @@
         <%= yield :name %>
     </div>
     <%= image_tag("Hungary.png", class: 'country-img')%>
-        <div class="titolo">
-            <%= link_to("Overview", country_path(@country, :anchor => "overview"), :class => "country-nav-header") %>
-        </div>
-        <ul class="nav nav-list mb-xl show-bg-active">
+    <div class="titolo">
+        <%= link_to("Overview", country_path(@country, :anchor => "overview"), :class => "country-nav-header") %>
+    </div>
+    <ul class="nav nav-list mb-xl show-bg-active">
+        <li>
+            <div id="subli" style="padding-top:10px;">
+                <!-- <a data-hash data-hash-offset="30" href="#archival">Archival sources</a> -->
+                <%= link_to("Archival Sources", country_path(@country, :anchor => "archival")) %>
+            </div>
+        </li>
+    </ul>  
+    <div class="titolobn">
+        <%= link_to("Elite Groups", country_elites_path(@country), :class => "country-nav-header") %>
+    </div>
+    <ul class="nav nav-list mb-xl show-bg-active2">
+        <% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
+        <% grouped_elites.each do |type, elite| %>
             <li>
-                <div id="subli" style="padding-top:10px;">
-                    <!-- <a data-hash data-hash-offset="30" href="#archival">Archival sources</a> -->
-                    <%= link_to("Archival Sources", country_path(@country, :anchor => "archival")) %>
-                </div>
+                <%= link_to elite.Name, country_elite_path(:country_id => @country.id, :id => elite.id) %>
             </li>
-        </ul>  
-        <div class="titolobn">
-            <%= link_to("Elite Groups", country_elites_path(@country), :class => "country-nav-header") %>
-        </div>
-        <ul class="nav nav-list mb-xl show-bg-active2">
-            <%= yield :elite_groups %>
-        </ul>
+        <% end %>
+    </ul>
 </aside>
-</div>

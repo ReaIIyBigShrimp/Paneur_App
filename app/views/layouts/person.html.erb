@@ -5,212 +5,103 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Person: <%= yield :name %></title>
+    <title>Person:
+        <%= yield :name %>
+    </title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+            <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <meta name="keywords" content="" />
-    <meta name="description" content="">
-    <meta name="author" content="">
+                <meta name="keywords" content="" />
+                <meta name="description" content="">
+                <meta name="author" content="">
 
 
-    <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <!-- Mobile Metas -->
+                <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Web Fonts  -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
+                <!-- Web Fonts  -->
+                <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
 
-    <!-- Link stylesheets here -->
-    <%= stylesheet_link_tag('theme') %>
-    <%= stylesheet_link_tag('theme-elements') %>
-    <%= stylesheet_link_tag('theme-animate') %>
+                <!-- Link stylesheets here -->
+                <%= stylesheet_link_tag('theme') %>
+                    <%= stylesheet_link_tag('theme-elements') %>
+                        <%= stylesheet_link_tag('theme-animate') %>
 </head>
 
 <body>
     <div class="body">
-        <header id="header" data-plugin-options='{"stickyEnabled": true, "stickyEnableOnBoxed": true, "stickyEnableOnMobile": true, "stickyStartAt": 57, "stickySetTop": "-57px", "stickyChangeLogo": true}'>
-
-        </header>
-
-        <div role="main" class="main">
-
-            <section class="page-header">
-                <div class="hidden-xs hidden-sm container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <%= image_tag('dep.svg', class: 'dep-image', align: 'left') %>
-                        </div>
-                        <div class="col-md-6" align="right" style="font-size:10px; line-height:14px; vertical-align:middle;">
-                            <%= image_tag('erc.svg', class: 'erc-image', align: 'right') %>
-                                <!-- <img src="img/erc.svg" align="right" style="margin-left:10px;" height="70px"> -->
-                                This project has received funding from the European Research Council under the European Union’s Horizon 2020 research and
-                                innovation programme
-                                <br/> (Grant Agreement n. 669194)
-                                <!-- Large button group -->
-                        </div>
-                    </div>
-                </div>
         
-        </section>
-        </div>
-        
-        <span class="visible-xs visible-sm">
-            <nav class="navbar navbar-inverse navbar-fixed-top  topmenutrasparente">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <span class="navbar-brand topmenu"><%= @person.Name %></span>
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbartop">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbartop">
-
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="topmenu">
-                                <a data-hash data-hash-offset="30" href="#overview">Overview</a>
-                            </li>
-                            <li class="topmenu">
-                                <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-                            </li>
-                            <li class="dropdown topmenu">
-                                <a class="dropdown-toggle active" data-toggle="dropdown" href="elitegroups.html"> Elite groups
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="topsubmenured">
-                                        <a href="elitegroups.html">Main page</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Party</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Government</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Central Bank</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Trade Organisations</a>
-                                    </li>
-                                    <li class="topsubmenu">
-                                        <a href="group.html">Academia</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </span>
-        <!-- FINE NAVIGAZIONE FISSA TOP (RESPONSIVE) -->
-
         <!-- Fixed nav bottom -->
         <%= render("layouts/shared/bottom_nav")%>
-        
-        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <%= yield :content %>
+                            <script>
+                                function goBack() {
+                                    window.history.go(-1);
+                                }
+                            </script>
+                            <div class="row rowmega" id="overview">
+                                <div class="titolomega col-md-8 hidden-xs hidden-sm" style="text-align: left; padding-left: 20px; font-size: 20px;">
+                                    <a href="#" onClick="history.go(-1); return false;" style="color: #fff; text-decoration:none; padding-left:80px;">&#8592; Back</a>
+                                </div>
+                                <div class="titolomega2 col-md-4 hidden-xs hidden-sm">
+                                    <%= @person.Name + " " + @person.Surname %>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-9 col-xs-7 col-sm-8">
+                                        <div class="shortlife">
+                                            <%= @person.Description %>(Budapest, 1934 - Warsaw, 1990)
+                                                <br/> Professor of international political economy - Corvinus University of Budapest
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-xs-5 col-sm-4">
+                                        <!-- Add class, adding 100% width property. -->
+                                        <%= image_tag('person.jpg') %>
+                                    </div>
 
-            <div class="row">
+                                </div>
+                                <div class="panel-group" id="accordion">
 
-                <div class="col-md-9">
-                    <%= yield :content %>
-                    <script>
-						function goBack() {
-							window.history.go(-1);
-						}
-					</script>
-	<div class="row rowmega" id="overview">
-		<div class="titolomega col-md-8 hidden-xs hidden-sm" style="text-align: left; padding-left: 20px; font-size: 20px;">
-			<a href="#" onClick="history.go(-1); return false;" style="color: #fff; text-decoration:none; padding-left:80px;">&#8592; Back</a>
-		</div>
-		<div class="titolomega2 col-md-4 hidden-xs hidden-sm"><%= @person.Name + " " + @person.Surname %></div>
-	</div>
-	<div class="col-md-12">
-		<div class="row">
-			<div class="col-md-9 col-xs-7 col-sm-8">
-				<div class="shortlife"><%= @person.Description %>(Budapest, 1934 - Warsaw, 1990)
-					<br/> Professor of international political economy - Corvinus University of Budapest
-                </div>
-			</div>
-			<div class="col-md-3 col-xs-5 col-sm-4">
-                <!-- Add class, adding 100% width property. -->
-                <%= image_tag('person.jpg') %>
-			</div>
-
-		</div>
-   		<div class="panel-group" id="accordion">
-
-			<%= yield :short_bio %>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
-							Relations
-						</a>
-					</h4>
-				</div>
-				<div id="collapse1Two" class="accordion-body collapse">
-					<div class="panel-body">
-						<%= yield :related_people %>
-					</div>
-				</div>
-			</div>
-			<div id "accordion" class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
-							Documents
-						</a>
-					</h4>
-				</div>
-				<div id="collapse1Three" class="accordion-body collapse">
-					<div class="panel-body">
-						<%= yield :documents %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-                </div>
-                <div class="col-md-3 hidden-xs hidden-sm">
-                    <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options='{"minWidth": 991, "containerSelector": ".container", "padding": {"top": 30}}'>
-
-                        <div class="nomepaese"><%= yield :name %></div>
-                        <%= image_tag("Hungary.png", class: 'country-img')%>
-                        <div class="titolo">
-                            <a data-hash data-hash-offset="30" href="#overview" style="color: #fff; text-decoration:none;">Overview</a>
-                        </div>
-                        <ul class="nav nav-list mb-xl show-bg-active">
-
-
-                            <li>
-
-                                <div id="subli" style="padding-top:10px;">
-                                    <a data-hash data-hash-offset="30" href="#archival">Archival sources</a>
-
-                                    <div id="spazio"></div>
-                            </li>
-
-                        </ul>
-
-
-                        <div class="titolobn">
-                            <span>Elite groups</span>
-                        </div>
-                        <ul class="nav nav-list mb-xl show-bg-active2">
-                            <%= yield :elite_groups %>
-                        </ul>
-
-
-                    </aside>
+                                    <%= yield :short_bio %>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
+                                                        Relations
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse1Two" class="accordion-body collapse">
+                                                <div class="panel-body">
+                                                    <%= yield :related_people %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id "accordion" class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
+                                                        Documents
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapse1Three" class="accordion-body collapse">
+                                                <div class="panel-body">
+                                                    <%= yield :documents %>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
                     </div>
-
+                    <div style="padding-top:50px;"></div>
                 </div>
-                <div style="padding-top:50px;"></div>
             </div>
-        </div>
 </body>
 
 </html>

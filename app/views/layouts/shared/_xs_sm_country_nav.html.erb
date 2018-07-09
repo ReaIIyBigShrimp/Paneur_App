@@ -30,8 +30,14 @@
                             <li class="topsubmenured">
                                 <%= link_to "Main page", country_elites_path(:country_id => @country.id) %>
                             </li>
-                                                        
-                            <%= yield :elite_groups_top %>
+                            <% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
+                            <% grouped_elites.each do |type, elite| %>
+                                <li class="topsubmenu">
+                                    <!-- <%= link_to type, elite %> -->
+                                    <!-- Elite for country - single element -->
+                                    <%= link_to(elite.Name, country_elite_path(@country, elite)) %>
+                                </li>
+                            <% end %>
                         </ul>
                     </li>
                 </ul>

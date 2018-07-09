@@ -2,27 +2,7 @@
 	<%= @country.Name %>
 <% end %>
 
-<% content_for :elite_groups do %>
-	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
-	<% grouped_elites.each do |type, elite| %>
-		<li>
-			<%= link_to elite.Name, country_elite_path(:country_id => @country.id, :id => elite.id) %>
-		</li>
-	<% end %>
-<% end %>
-
-<% content_for :elite_groups_top do %>
-	<% grouped_elites = @country.elites.map{|x| [x.elite_type.Name, x] }.sort_by(&:first) %>
-	<% grouped_elites.each do |type, elite| %>
-		<li class="topsubmenu">
-			<!-- <%= link_to type, elite %> -->
-			<!-- Elite for country - single element -->
-			<%= link_to(elite.Name, country_elite_path(@country, elite)) %>
-		</li>
-	<% end %>
-<% end %>
-
-<% content_for :content do  %>
+<% content_for :content do %>
 
 	<div class="row rowmega" id="overview">
 		<div class="titolomega hidden-xs hidden-sm col-md-8">&nbsp;

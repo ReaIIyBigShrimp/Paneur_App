@@ -1,164 +1,127 @@
-<% content_for :name do %>
-	<%= @person.Name + " " + @person.Surname %>
-<% end %>
-
-<% content_for :short_bio do %>
-    <!-- Add with test data from database -->
-    <!-- Description -->
-    <% unless @person.Description.empty? %>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle " data-panel="0" data-toggle="collapse" data-parent="#accordion" href="#collapse1One">
-                        Short bio
-                    </a>
-                </h4>
-            </div>
-            <div id="collapse1One" class="accordion-body collapse in">
-                <div class="panel-body">
-                    <%= @person.Description %>
-                </div>
-            </div>
-        </div>
-    <% end %>
-<% end %>
-
-<% content_for :related_people do %>    
-    <table class="table table-striped">
-        <tbody>
-            <% @related_people.each do |related_person| %>
-                <tr>
-                    <td width="90%">
-                        <div class="contactname">
-                            <!-- <a href="person.html"><%= related_person.Name %></a> -->
-                            <%= link_to related_person.get_full_name , '/people/' + related_person.id.to_s %>
-                        </div>
-                        <div class="contactdesc"><%= related_person.Description %></div>
-                    </td>
-                    <td>
-                        <div class="hidden-xs">
-                            <a href="person.html">
-                                <!-- <img src="img/person.jpg" width="100%"> -->
-                                <%= image_tag('person.jpg') %>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-<% end %>
-
-<%= content_for :documents do %>
-    <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <%= image_tag('pdf_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <!-- <img src="img/xls_doc.png" width="100%"> -->
-                        <%= image_tag('xls_doc.png', class: 'doc-img')%>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <!-- <img src="img/doc_doc.png" width="100%"> -->
-                        <%= image_tag('doc_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <%= image_tag('pdf_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <!-- <img src="img/zip_doc.png" width="100%"> -->
-                        <%= image_tag('zip_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <!-- <img src="img/doc_doc.png" width="100%"> -->
-                        <%= image_tag('doc_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td width="90%">
-                    <div class="doctitle">
-                        <a href="nomedocumento.pdf" target="_blank">Titolo del documento</a>
-                    </div>
-                    <div class="docdesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam.</div>
-                </td>
-                <td>
-                    <a href="nomedocumento.pdf" target="_blank">
-                        <!-- <img src="img/ppt_doc.png" width="100%"> -->
-                        <%= image_tag('ppt_doc.png', class: 'doc-img') %>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<% content_for :title do %>
+	<%= @person.get_full_name %>
 <% end %>
 
 <% content_for :content do  %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <%= yield :content %>
+                    <script>
+                        function goBack() {
+                            window.history.go(-1);
+                        }
+                    </script>
+                    <div class="row rowmega" id="overview">
+                        <div class="titolomega col-md-8 hidden-xs hidden-sm" style="text-align: left; padding-left: 20px; font-size: 20px;">
+                            <a href="#" onClick="history.go(-1); return false;" style="color: #fff; text-decoration:none; padding-left:80px;">&#8592; Back</a>
+                        </div>
+                        <div class="titolomega2 col-md-4 hidden-xs hidden-sm">
+                            <%= @person.get_full_name %>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-9 col-xs-7 col-sm-8">
+                                <div class="shortlife">
+                                    <%= @person.Description %>(Budapest, 1934 - Warsaw, 1990)
+                                        <br/> Professor of international political economy - Corvinus University of Budapest
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-xs-5 col-sm-4">
+                                <!-- Add class, adding 100% width property. -->
+                                <%= image_tag('person.jpg') %>
+                            </div>
 
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <% unless @person.Description.empty? %>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <a class="accordion-toggle " data-panel="0" data-toggle="collapse" data-parent="#accordion" href="#collapse1One">
+                                                Short bio
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse1One" class="accordion-body collapse in">
+                                        <div class="panel-body">
+                                            <%= @person.Description %>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-panel="2" data-toggle="collapse" data-parent="#accordion" href="#collapse1Two">
+                                            Relations
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1Two" class="accordion-body collapse">
+                                    <div class="panel-body">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <% @related_people.each do |related_person| %>
+                                                    <tr>
+                                                        <td width="90%">
+                                                            <div class="contactname">
+                                                                <!-- <a href="person.html"><%= related_person.Name %></a> -->
+                                                                <%= link_to related_person.get_full_name , '/people/' + related_person.id.to_s %>
+                                                            </div>
+                                                            <div class="contactdesc"><%= related_person.Description %></div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="hidden-xs">
+                                                                <a href="person.html">
+                                                                    <!-- <img src="img/person.jpg" width="100%"> -->
+                                                                    <%= image_tag('person.jpg') %>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                <% end %>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id "accordion" class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-panel="1" data-toggle="collapse" data-parent="#accordion" href="#collapse1Three">
+                                            Documents
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1Three" class="accordion-body collapse">
+                                    <div class="panel-body">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td width="90%">
+                                                        <div class="doctitle">
+                                                            <%= link_to 'Document_Title_Here' %>
+                                                        </div>
+                                                        <div class="docdesc">Document description here.</div>
+                                                    </td>
+                                                    <td>
+                                                        <!-- Placeholder file link -->
+                                                        <%= link_to 'files/DOC 0001 DSC06246.pdf' do %>
+                                                            <%= image_tag('pdf_doc.png', class: 'doc-img') %>
+                                                        <% end %>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div style="padding-top:50px;"></div>
+        </div>
+    </div>
 <% end %>
