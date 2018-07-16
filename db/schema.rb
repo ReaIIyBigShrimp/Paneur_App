@@ -14,31 +14,93 @@ ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  
+
+  create_table "AspNetInvitations", primary_key: "Token", id: :text, force: :cascade do |t|
+    t.text "Adresant", null: false
+    t.text "InviterId", null: false
+    t.datetime "Timestamp", null: false
+    t.index ["InviterId"], name: "IX_AspNetInvitations_InviterId"
+  end
+
+  create_table "AspNetRoleClaims", primary_key: "Id", id: :serial, force: :cascade do |t|
+    t.text "ClaimType"
+    t.text "ClaimValue"
+    t.text "RoleId", null: false
+    t.index ["RoleId"], name: "IX_AspNetRoleClaims_RoleId"
+  end
+
+  create_table "AspNetRoles", primary_key: "Id", id: :text, force: :cascade do |t|
+    t.text "ConcurrencyStamp"
+    t.string "Name", limit: 256
+    t.string "NormalizedName", limit: 256
+    t.index ["NormalizedName"], name: "RoleNameIndex", unique: true
+  end
+
+  create_table "AspNetUserClaims", primary_key: "Id", id: :serial, force: :cascade do |t|
+    t.text "ClaimType"
+    t.text "ClaimValue"
+    t.text "UserId", null: false
+    t.index ["UserId"], name: "IX_AspNetUserClaims_UserId"
+  end
+
+  create_table "AspNetUserLogins", primary_key: ["LoginProvider", "ProviderKey"], force: :cascade do |t|
+    t.text "LoginProvider", null: false
+    t.text "ProviderKey", null: false
+    t.text "ProviderDisplayName"
+    t.text "UserId", null: false
+    t.index ["UserId"], name: "IX_AspNetUserLogins_UserId"
+  end
+
+  create_table "AspNetUserRoles", primary_key: ["UserId", "RoleId"], force: :cascade do |t|
+    t.text "UserId", null: false
+    t.text "RoleId", null: false
+    t.index ["RoleId"], name: "IX_AspNetUserRoles_RoleId"
+  end
+
+  create_table "AspNetUserTokens", primary_key: ["UserId", "LoginProvider", "Name"], force: :cascade do |t|
+    t.text "UserId", null: false
+    t.text "LoginProvider", null: false
+    t.text "Name", null: false
+    t.text "Value"
+  end
+
+  create_table "AspNetUsers", primary_key: "Id", id: :text, force: :cascade do |t|
+    t.integer "AccessFailedCount", null: false
+    t.text "ConcurrencyStamp"
+    t.string "Email", limit: 256
+    t.boolean "EmailConfirmed", null: false
+    t.boolean "LockoutEnabled", null: false
+    t.datetime "LockoutEnd"
+    t.string "NormalizedEmail", limit: 256
+    t.string "NormalizedUserName", limit: 256
+    t.text "PasswordHash"
+    t.text "PhoneNumber"
+    t.boolean "PhoneNumberConfirmed", null: false
+    t.text "SecurityStamp"
+    t.boolean "TwoFactorEnabled", null: false
+    t.string "UserName", limit: 256
+    t.index ["NormalizedEmail"], name: "EmailIndex"
+    t.index ["NormalizedUserName"], name: "UserNameIndex", unique: true
+  end
+
   create_table "Countries", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.text "Description"
     t.integer "FlagId"
     t.string "Name", limit: 255, null: false
     t.index ["FlagId"], name: "IX_Countries_FlagId"
   end
-  
-  create_table "CountryDocument", primary_key: ["CountryId", "FileId"], force: :cascade do |t|
-    t.integer "CountryId", null: false
-    t.integer "FileId", null: false
-    t.index ["FileId"], name: "IX_CountryDocument_FileId"
-  end
-  
+
   create_table "EliteDocument", primary_key: ["EliteId", "FileId"], force: :cascade do |t|
     t.integer "EliteId", null: false
     t.integer "FileId", null: false
     t.index ["FileId"], name: "IX_EliteDocument_FileId"
   end
-  
+
   create_table "EliteTypes", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "Name", limit: 255, null: false
     t.index ["Name"], name: "AlternateKey_ElitTypeName", unique: true
   end
-  
+
   create_table "Elites", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.integer "CountryId", null: false
     t.text "Description"
@@ -47,18 +109,18 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["CountryId"], name: "IX_Elites_CountryId"
     t.index ["TypeId"], name: "IX_Elites_TypeId"
   end
-  
+
   create_table "FileLanguage", primary_key: ["LanguageId", "FileId"], force: :cascade do |t|
     t.integer "LanguageId", null: false
     t.integer "FileId", null: false
     t.index ["FileId"], name: "IX_FileLanguage_FileId"
   end
-  
+
   create_table "FileTypes", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "Name", limit: 255, null: false
     t.index ["Name"], name: "AlternateKey_FileTypeName", unique: true
   end
-  
+
   create_table "Files", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.string "ArchivalCode", limit: 255
     t.oid "Date", null: false
@@ -96,7 +158,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "Surname", limit: 255, null: false
     t.index ["PictureId"], name: "IX_People_PictureId"
   end
-  
+
   create_table "PeopleElites", primary_key: "Id", id: :serial, force: :cascade do |t|
     t.oid "DateOfEmployment", null: false
     t.oid "DateOfResignation", null: false
@@ -107,7 +169,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["EliteId"], name: "IX_PeopleElites_EliteId"
     t.index ["PersonId"], name: "IX_PeopleElites_PersonId"
   end
-  
+
   create_table "PersonDocument", primary_key: ["PersonId", "FileId"], force: :cascade do |t|
     t.integer "PersonId", null: false
     t.integer "FileId", null: false
@@ -119,21 +181,25 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "PersonId", null: false
     t.index ["PersonId"], name: "IX_PersonNationality_PersonId"
   end
-  
+
   create_table "PersonPerson", primary_key: ["PersonId", "OtherPersonId"], force: :cascade do |t|
     t.integer "PersonId", null: false
     t.integer "OtherPersonId", null: false
     t.index ["OtherPersonId"], name: "IX_PersonPerson_OtherPersonId"
   end
 
-  
-  
-  add_foreign_key "Countries", "\"Files\"", column: "FlagId", primary_key: "Id", name: "FK_Countries_Files_FlagId"
-  add_foreign_key "CountryDocument", "\"Countries\"", column: "CountryId", primary_key: "Id", name: "FK_CountryDocument_Countries_CountryId", on_delete: :cascade
-  add_foreign_key "CountryDocument", "\"Files\"", column: "FileId", primary_key: "Id", name: "FK_CountryDocument_Files_FileId", on_delete: :cascade
+  create_table "__EFMigrationsHistory", primary_key: "MigrationId", id: :string, limit: 150, force: :cascade do |t|
+    t.string "ProductVersion", limit: 32, null: false
+  end
+
+  add_foreign_key "AspNetInvitations", "\"AspNetUsers\"", column: "InviterId", primary_key: "Id", name: "FK_AspNetInvitations_AspNetUsers_InviterId", on_delete: :cascade
+  add_foreign_key "AspNetRoleClaims", "\"AspNetRoles\"", column: "RoleId", primary_key: "Id", name: "FK_AspNetRoleClaims_AspNetRoles_RoleId", on_delete: :cascade
+  add_foreign_key "AspNetUserClaims", "\"AspNetUsers\"", column: "UserId", primary_key: "Id", name: "FK_AspNetUserClaims_AspNetUsers_UserId", on_delete: :cascade
+  add_foreign_key "AspNetUserLogins", "\"AspNetUsers\"", column: "UserId", primary_key: "Id", name: "FK_AspNetUserLogins_AspNetUsers_UserId", on_delete: :cascade
+  add_foreign_key "AspNetUserRoles", "\"AspNetRoles\"", column: "RoleId", primary_key: "Id", name: "FK_AspNetUserRoles_AspNetRoles_RoleId", on_delete: :cascade
+  add_foreign_key "AspNetUserRoles", "\"AspNetUsers\"", column: "UserId", primary_key: "Id", name: "FK_AspNetUserRoles_AspNetUsers_UserId", on_delete: :cascade
   add_foreign_key "EliteDocument", "\"Elites\"", column: "EliteId", primary_key: "Id", name: "FK_EliteDocument_Elites_EliteId", on_delete: :cascade
   add_foreign_key "EliteDocument", "\"Files\"", column: "FileId", primary_key: "Id", name: "FK_EliteDocument_Files_FileId", on_delete: :cascade
-  add_foreign_key "Elites", "\"Countries\"", column: "CountryId", primary_key: "Id", name: "FK_Elites_Countries_CountryId", on_delete: :cascade
   add_foreign_key "Elites", "\"EliteTypes\"", column: "TypeId", primary_key: "Id", name: "FK_Elites_EliteTypes_TypeId", on_delete: :cascade
   add_foreign_key "FileLanguage", "\"Files\"", column: "FileId", primary_key: "Id", name: "FK_FileLanguage_Files_FileId", on_delete: :cascade
   add_foreign_key "FileLanguage", "\"Languages\"", column: "LanguageId", primary_key: "Id", name: "FK_FileLanguage_Languages_LanguageId", on_delete: :cascade
