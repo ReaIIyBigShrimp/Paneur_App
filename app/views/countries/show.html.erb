@@ -27,17 +27,11 @@
 			<%= link_to file.ArchivalCode + "|" + file.Name, "/files/#{file.FileName}", target: "_blank" %>
 		</li>
 	<% end %>
+	<!-- -Can remove condition -->
 	<% if @documents.count == 0 %>
 		<li class="documenti">
 			<p style="padding-left: 15px;">No documents for country</p>
 		</li>
 	<% end %>
-		<!--
-		<li class="documenti">
-			<a href="doc/nomedocumento.pdf" target="_blank">The Politburo of the HSWP (M-KS 288. f. 5. cs.) – repertory list and memos</a>
-		</li> 
-		-->
 	</ul>
-
-
 <% end %>
