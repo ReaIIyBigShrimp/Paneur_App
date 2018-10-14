@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails Application
 
-Things you may want to cover:
+Gems noted in gemfile, with comments.
 
-* Ruby version
+Overview
+----------
+Retrieves person data and job associations, with document ownership denoted within the database design(Atleast one 'person_id' for each document).
 
-* System dependencies
+People can have related people and are shown within the accordian section 'Related People'. Owl Carousel is used for displaying the elements as a horizontal slider. 
 
-* Configuration
+Countries have 'Elite Groups' and are shown in side navigation bar for each country.
 
-* Database creation
+An Elite Group contains multiple related data entities, such as documents and people.
 
-* Database initialization
+Documents are downloaded and shown in browser if the browser supports.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More to follow...
