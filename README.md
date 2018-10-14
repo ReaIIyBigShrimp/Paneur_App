@@ -14,6 +14,6 @@ Countries have 'Elite Groups' and are shown in side navigation bar for each coun
 
 An Elite Group contains multiple related data entities, such as documents and people.
 
-Documents are downloaded and shown in browser if the browser supports.
+Documents are downloaded and shown in browser supported.
 
 More to follow...
