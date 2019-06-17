@@ -74,6 +74,7 @@ GEM
     erubi (1.7.0)
     erubis (2.7.0)
     execjs (2.7.0)
+    ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
@@ -103,9 +104,12 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.2)
     nio4r (2.1.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     nokogiri (1.8.2-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     owlcarousel-rails (2.2.3.5)
+    pg (0.21.0)
     pg (0.21.0-x64-mingw32)
     popper_js (1.12.9)
     public_suffix (3.0.1)
@@ -143,7 +147,7 @@ GEM
     rmre (0.0.9)
       activerecord (>= 3.0.0)
       erubis
-    rubyzip (1.2.1)
+    rubyzip (1.2.3)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -194,6 +198,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
