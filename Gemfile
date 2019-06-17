@@ -37,7 +37,7 @@ gem 'railties'
 gem "autoprefixer-rails"
 
 # gem 'bootstrap', '~> 4.0'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 gem 'simple-line-icons-rails', '~> 0.1.3'
 gem 'owlcarousel-rails', '~> 2.0'
