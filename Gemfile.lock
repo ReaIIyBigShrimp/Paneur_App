@@ -113,7 +113,8 @@ GEM
     pg (0.21.0-x64-mingw32)
     popper_js (1.12.9)
     public_suffix (3.0.1)
-    puma (3.11.0)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.7)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
@@ -221,7 +222,7 @@ DEPENDENCIES
   owlcarousel-rails (~> 2.0)
   pg (~> 0.18)
   popper_js
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.4)
   railties
   rmre
